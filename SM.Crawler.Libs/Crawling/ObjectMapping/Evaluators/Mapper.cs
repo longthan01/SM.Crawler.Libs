@@ -9,18 +9,20 @@ using System.Linq;
 
 namespace SM.Crawler.Libs.Crawling.ObjectMapping.Evaluators
 {
-    public class Mapper<T> : IMapper where T : class, new()
+    public class Mapper : IMapper
     {
         private Dictionary<string, Func<IMapper, EvaluationContext>> mappingExpressions = new Dictionary<string, Func<IMapper, EvaluationContext>>();
 
         public string XpathRoot { get; }
+        private Type TargetType { get; }
 
-        public Mapper() : this(null)
+        public Mapper(Type targetType) : this(targetType, null)
         {
         }
-        public Mapper(string xpathRoot)
+        public Mapper(Type targetType, string xpathRoot)
         {
             XpathRoot = xpathRoot;
+            TargetType = targetType;
         }
         public IMapper Map(string propertyName, string xpath)
         {
@@ -136,7 +138,7 @@ namespace SM.Crawler.Libs.Crawling.ObjectMapping.Evaluators
 
         public Type GetTargetType()
         {
-            return typeof(T);
+            return this.TargetType;
         }
 
         public Dictionary<string, Func<IMapper, EvaluationContext>> GetMappingExpressions()

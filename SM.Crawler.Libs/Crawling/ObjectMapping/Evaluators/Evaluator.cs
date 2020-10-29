@@ -9,14 +9,14 @@ namespace SM.Crawler.Libs.Crawling.ObjectMapping.Evaluators
 {
     public class Evaluator
     {
-        public static T Evaluate<T>(string html, IMapper mapper) where T : class, new()
+        public static object Evaluate(string html, IMapper mapper)
         {
-            T result = (T)Activator.CreateInstance(typeof(T));
+            object result = Activator.CreateInstance(mapper.GetTargetType());
             EvaluateTo(result, html, mapper);
             return result;
         }
 
-        public static void EvaluateTo<T>(T target, string html, IMapper mapper) where T : class, new()
+        public static void EvaluateTo(object target, string html, IMapper mapper)
         {
             HtmlAgilityPack.HtmlDocument document = new HtmlAgilityPack.HtmlDocument();
             document.LoadHtml(html);

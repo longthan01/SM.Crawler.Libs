@@ -4,10 +4,6 @@ using System.Collections.Generic;
 
 namespace SM.Crawler.Libs.Crawling.ObjectMapping.Evaluators
 {
-    public interface IMapper<T> : IMapper
-    {
-        
-    }
     public interface IMapper
     {
         Type GetTargetType();
