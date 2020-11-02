@@ -2,10 +2,23 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
+    <Product>SM Libraries</Product>
+    <Company>SMation</Company>
+    <Authors>SMation</Authors>
+    <Description>A generic HTML-to-Object mapper</Description>
+    <Copyright>SMation</Copyright>
+    <RepositoryUrl>https://github.com/longthan01/SM.Crawler.Libs</RepositoryUrl>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="HtmlAgilityPack" Version="1.11.26" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="nuget.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+	
 </Project>
