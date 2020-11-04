@@ -1,0 +1,2377 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Free Proxy List - ProxyScan</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Always update proxies">
+    <meta name="keywords" content="Proxy List, free proxy list, working proxy list">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="images/favicon.ico">
+
+    <!-- App css -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="css/icons.min.css" rel="stylesheet" type="text/css" />
+    <link href="css/theme.min.css" rel="stylesheet" type="text/css" />
+    <link href="css/flag-icon.css" rel="stylesheet" />
+    <link href="css/selectize.css" rel="stylesheet" />
+	<script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+    <style>
+        .googleAdss {
+            width: 320px;
+            height: 100px;
+        }
+
+        @media(min-width: 500px) {
+            .googleAdss {
+                width: 468px;
+                height: 60px;
+            }
+        }
+
+        @media(min-width: 800px) {
+            .googleAdss {
+                min-width: 728px;
+                height: 90px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+
+        <div class="main-content">
+
+            <header id="page-topbar">
+                <div class="navbar-header">
+                    <!-- LOGO -->
+                    <div class="navbar-brand-box d-flex align-items-left">
+                        <a href="/" class="logo">
+                            <img src="/images/logo.png" style="width: 200px;" />
+                        </a>
+
+                        <button type="button" class="btn btn-sm mr-2 font-size-16 d-lg-none header-item waves-effect waves-light" data-toggle="collapse" data-target="#topnav-menu-content">
+                            <i class="fa fa-fw fa-bars"></i>
+                        </button>
+                    </div>
+                </div>
+            </header>
+
+            <div class="topnav">
+                <div class="container-fluid">
+                    <nav class="navbar navbar-light navbar-expand-lg topnav-menu">
+
+                        <div class="collapse navbar-collapse" id="topnav-menu-content">
+                            <ul class="navbar-nav">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/">
+                                        <i class="feather-home mr-2"></i>Homepage
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/proxychecker">
+                                        <i class="feather-check-square mr-2"></i>Proxy Checker
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/proxyfilter">
+                                        <i class="feather-filter mr-2"></i>Proxy Filter
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/proxyscraper">
+                                        <i class="feather-globe mr-2"></i>Proxy Scraper
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/api">
+                                        <i class="feather-git-pull-request mr-2"></i>API
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+            <script src="js/jquery.min.js"></script>
+            <style>
+    .progress-bar {
+        color: #42464b;
+    }
+
+    .progress {
+        text-align: center;
+    }
+</style>
+<body>
+    <div style="text-align: center; margin-top: 13px;" id="googleAdss">
+        <ins class="adsbygoogle googleAdss"
+             style="display:inline-block"
+             data-ad-client="ca-pub-6377565397678080"
+             data-ad-slot="2697048045"
+             data-full-width-responsive="true"></ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </div>
+    <div class="page-content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="card card-body" style="padding: 12px;  margin-top: -13px;  margin-bottom: 10px;">
+                        <h5 style="text-align: center;"><i class="feather-download-cloud mr-2"></i>Download as txt</h5>
+                        <ul class="list-inline row mt-4 mb-0" style="text-align: center;">
+                            <li class="col-3">
+                                <p class="mb-0">
+                                    <a href="/download?type=http">
+                                        <i class="feather-download-cloud mr-2"></i>HTTP Proxies
+                                    </a>
+                                </p>
+                            </li>
+                            <li class="col-3">
+                                <p class="mb-0">
+                                    <a href="/download?type=https">
+                                        <i class="feather-download-cloud mr-2"></i>HTTPS Proxies
+                                    </a>
+                                </p>
+                            </li>
+                            <li class="col-3">
+                                <p class="mb-0">
+                                    <a href="/download?type=socks4">
+                                        <i class="feather-download-cloud mr-2"></i>SOCKS4 Proxies
+                                    </a>
+                                </p>
+                            </li>
+                            <li class="col-3">
+                                <p class="mb-0">
+                                    <a href="/download?type=socks5">
+                                        <i class="feather-download-cloud mr-2"></i>SOCKS5 Proxies
+                                    </a>
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- start page title -->
+            <div class="row">
+                <div class="col-lg-7">
+                    <div class="card card-body">
+                        <form id="filterForm" action="/Home/FilterResult">
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <label for="select-country">Country</label>
+                                    <select id="select-country" placeholder="Select Country..." multiple name="selectedCountry">
+                                            <option value="AL">Albania</option>
+                                            <option value="KH">Cambodia</option>
+                                            <option value="LS">Lesotho</option>
+                                            <option value="CO">Colombia</option>
+                                            <option value="BR">Brazil</option>
+                                            <option value="MN">Mongolia</option>
+                                            <option value="ID">Indonesia</option>
+                                            <option value="PL">Poland</option>
+                                            <option value="IR">Iran</option>
+                                            <option value="CN">China</option>
+                                            <option value="IN">India</option>
+                                            <option value="BD">Bangladesh</option>
+                                            <option value="RO">Romania</option>
+                                            <option value="ZA">South Africa</option>
+                                            <option value="RU">Russia</option>
+                                            <option value="LV">Latvia</option>
+                                            <option value="CA">Canada</option>
+                                            <option value="RS">Serbia</option>
+                                            <option value="AM">Armenia</option>
+                                            <option value="US">United States</option>
+                                            <option value="UA">Ukraine</option>
+                                            <option value="IQ">Iraq</option>
+                                            <option value="TH">Thailand</option>
+                                            <option value="CG">Republic of the Congo</option>
+                                            <option value="KE">Kenya</option>
+                                            <option value="HN">Honduras</option>
+                                            <option value="CZ">Czechia</option>
+                                            <option value="CL">Chile</option>
+                                            <option value="KG">Kyrgyzstan</option>
+                                            <option value="GE">Georgia</option>
+                                            <option value="HU">Hungary</option>
+                                            <option value="EC">Ecuador</option>
+                                            <option value="VN">Vietnam</option>
+                                            <option value="BO">Bolivia</option>
+                                            <option value="MY">Malaysia</option>
+                                            <option value="KR">South Korea</option>
+                                            <option value="BG">Bulgaria</option>
+                                            <option value="JP">Japan</option>
+                                            <option value="AR">Argentina</option>
+                                            <option value="NP">Nepal</option>
+                                            <option value="PK">Pakistan</option>
+                                            <option value="SG">Singapore</option>
+                                            <option value="PH">Philippines</option>
+                                            <option value="CY">Cyprus</option>
+                                            <option value="ES">Spain</option>
+                                            <option value="IE">Ireland</option>
+                                            <option value="MD">Moldova</option>
+                                            <option value="DE">Germany</option>
+                                            <option value="NL">Netherlands</option>
+                                            <option value="AU">Australia</option>
+                                            <option value="PT">Portugal</option>
+                                            <option value="LB">Lebanon</option>
+                                            <option value="MZ">Mozambique</option>
+                                            <option value="PS">Palestinian Territory</option>
+                                            <option value="TR">Turkey</option>
+                                            <option value="NG">Nigeria</option>
+                                            <option value="GB">United Kingdom</option>
+                                            <option value="BW">Botswana</option>
+                                            <option value="PE">Peru</option>
+                                            <option value="FR">France</option>
+                                            <option value="GR">Greece</option>
+                                            <option value="EG">Egypt</option>
+                                            <option value="UZ">Uzbekistan</option>
+                                            <option value="IT">Italy</option>
+                                            <option value="SE">Sweden</option>
+                                            <option value="TW">Taiwan</option>
+                                            <option value="DK">Denmark</option>
+                                            <option value="SO">Somalia</option>
+                                            <option value="TT">Trinidad and Tobago</option>
+                                            <option value="HK">Hong Kong</option>
+                                            <option value="MX">Mexico</option>
+                                            <option value="VE">Venezuela</option>
+                                            <option value="AE">United Arab Emirates</option>
+                                            <option value="MM">Myanmar</option>
+                                            <option value="LA">Laos</option>
+                                            <option value="HR">Croatia</option>
+                                            <option value="PY">Paraguay</option>
+                                            <option value="TM">Turkmenistan</option>
+                                            <option value="SK">Slovakia</option>
+                                            <option value="PR">Puerto Rico</option>
+                                            <option value="CD">Democratic Republic of the Congo</option>
+                                            <option value="CR">Costa Rica</option>
+                                            <option value="CH">Switzerland</option>
+                                            <option value="LY">Libya</option>
+                                            <option value="AT">Austria</option>
+                                            <option value="BA">Bosnia and Herzegovina</option>
+                                            <option value="MK">Macedonia</option>
+                                            <option value="XK">Kosovo</option>
+                                            <option value="SA">Saudi Arabia</option>
+                                            <option value="SC">Seychelles</option>
+                                            <option value="BE">Belgium</option>
+                                            <option value="LT">Lithuania</option>
+                                            <option value="KZ">Kazakhstan</option>
+                                            <option value="UG">Uganda</option>
+                                            <option value="HT">Haiti</option>
+                                            <option value="CM">Cameroon</option>
+                                            <option value="AF">Afghanistan</option>
+                                            <option value="BI">Burundi</option>
+                                            <option value="MW">Malawi</option>
+                                            <option value="ME">Montenegro</option>
+                                            <option value="SI">Slovenia</option>
+                                            <option value="GT">Guatemala</option>
+                                            <option value="DO">Dominican Republic</option>
+                                            <option value="UNK">Unknown</option>
+                                            <option value="TZ">Tanzania</option>
+                                            <option value="ZW">Zimbabwe</option>
+                                            <option value="UY">Uruguay</option>
+                                            <option value="MT">Malta</option>
+                                            <option value="SL">Sierra Leone</option>
+                                            <option value="BF">Burkina Faso</option>
+                                            <option value="PA">Panama</option>
+                                            <option value="GQ">Equatorial Guinea</option>
+                                            <option value="TJ">Tajikistan</option>
+                                            <option value="NZ">New Zealand</option>
+                                            <option value="SY">Syria</option>
+                                            <option value="SS">South Sudan</option>
+                                            <option value="ML">Mali</option>
+                                            <option value="BY">Belarus</option>
+                                            <option value="NO">Norway</option>
+                                            <option value="BJ">Benin</option>
+                                            <option value="NI">Nicaragua</option>
+                                            <option value="MV">Maldives</option>
+                                            <option value="NE">Niger</option>
+                                            <option value="AO">Angola</option>
+                                            <option value="MO">Macao</option>
+                                            <option value="LU">Luxembourg</option>
+                                            <option value="ZM">Zambia</option>
+                                            <option value="GN">Guinea</option>
+                                            <option value="GH">Ghana</option>
+                                    </select>
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="status" name="status" value="1" checked="checked">
+                                        <label class="custom-control-label" for="status">Status <span id="statusSpan" style="color:green">OK</span></label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="form-group">
+                                        <label for="pingText">Max Ping</label>
+                                        <input type="text" id="pingText" class="form-control" placeholder="Enter Max Ping" name="ping">
+                                    </div>
+                                </div>
+                                <div class="col-lg-2">
+                                    <label for="http">Proxy Type</label>
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="http" name="selectedType" value="HTTP">
+                                        <label class="custom-control-label" for="http">HTTP</label>
+                                    </div>
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="https" name="selectedType" value="HTTPS">
+                                        <label class="custom-control-label" for="https">HTTPS</label>
+                                    </div>
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="socks4" name="selectedType" value="SOCKS4">
+                                        <label class="custom-control-label" for="socks4">SOCKS4</label>
+                                    </div>
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="socks5" name="selectedType" value="SOCKS5">
+                                        <label class="custom-control-label" for="socks5">SOCKS5</label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2">
+                                    <label for="http">Anonymity</label>
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="transparent" name="SelectedAnonymity" value="Transparent">
+                                        <label class="custom-control-label" for="transparent">Transparent</label>
+                                    </div>
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="anonymous" name="SelectedAnonymity" value="Anonymous">
+                                        <label class="custom-control-label" for="anonymous">Anonymous</label>
+                                    </div>
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="elite" name="SelectedAnonymity" value="Elite">
+                                        <label class="custom-control-label" for="elite">Elite</label>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label for="select-ports">Port numbers</label>
+                                    <select id="select-ports" placeholder="Add Port numbers" multiple name="ports"></select>
+                                </div>
+                                <div class="col-md-6" style="margin-top: 30px;">
+                                    <label for="select-ports"></label>
+                                    <button id="submitButton" type="submit" class="btn btn-primary btn-block waves-effect waves-light float-right">Search</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <div class="card card-body">
+                        <h5>Free Proxy List</h5>
+                        <span style="font-size: 15px;">All the proxies are subjected to a detailed check(every 10 minutes) before coming to the list. Each proxy is controlled by the parameter set (ping, country, city, type and degree of anonymity).</span>
+                    </div>
+                    <div class="card card-body" style="margin-top: -21px; padding-top: 0px; padding-bottom: 11px;">
+                        <ul class="list-inline row mt-4 mb-0">
+                            <li class="col-3">
+                                <h5>5223</h5>
+                                <p class="mb-0">Total Proxies</p>
+                            </li>
+                            <li class="col-3">
+                                <h5>215</h5>
+                                <p class="mb-0">HTTP/S</p>
+                            </li>
+                            <li class="col-3">
+                                <h5>5043</h5>
+                                <p class="mb-0">SOCKS4/5</p>
+                            </li>
+                            <li class="col-3">
+                                <h5>5026</h5>
+                                <p class="mb-0">Anonymous/Elite</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div style="text-align: center;margin-bottom: 20px;" id="googleAdss">
+                <ins class="adsbygoogle googleAdss"
+                     style="display:inline-block"
+                     data-ad-client="ca-pub-6377565397678080"
+                     data-ad-slot="2697048045"
+                     data-full-width-responsive="true"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </div>
+            <div class="row">
+                <style>
+                    th a {
+                        color: #495057;
+                    }
+                </style>
+                <div class="col-12">
+                    <div class="card card-body">
+                        <div class="table-responsive">
+                            <table class="table mb-0" id="proxyTable">
+                                <thead class="thead-light">
+                                    <tr>
+                                        <th>Ip Address</th>
+                                        <th>Port</th>
+                                        <th>Country, City</th>
+                                        <th><a onclick="sortResult(true, false, false);return false;" id="sortPing" href="">Ping ⇡</a></th>
+                                        <th>Type</th>
+                                        <th>Anonymity</th>
+                                        <th><a onclick="sortResult(false, false, true);return false;" id="sortUptime" href="">Uptime ⇡</a></th>
+                                        <th>Last Status</th>
+                                        <th><a onclick="sortResult(false, true, false);return false;" id="sortTime" style="color: blue" href="">Last Check ⇡</a></th>
+                                    </tr>
+                                </thead>
+                                <tbody id="loadPage">
+                                        <tr>
+        <th scope="row">31.206.38.40</th>
+        <td>37630</td>
+        <td><span class="flag-icon flag-icon-tr"></span>  Turkey, Diyarbakir</td>
+        <td>
+                <div class="progress mb-2">
+                    <div class="progress-bar bg-success" role="progressbar" style="width:92%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">89</div>
+                </div>
+        </td>
+        <td>
+SOCKS4        </td>
+        <td>Anonymous</td>
+        <td>58.5% <a data-toggle="tooltip" title="31 of 53">(31)</a></td>
+    <td>
+            <span style="color:green">OK</span>
+    </td>
+        <td>3 seconds</td>
+    </tr>
+    <tr>
+        <th scope="row">181.225.65.106</th>
+        <td>4145</td>
+        <td><span class="flag-icon flag-icon-co"></span>  Colombia, Cucuta</td>
+        <td>
+                <div class="progress mb-2">
+                    <div class="progress-bar bg-warning" role="progressbar" style="width:68%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">320</div>
+                </div>        </td>
+        <td>
+SOCKS4        </td>
+        <td>Anonymous</td>
+        <td>49.1% <a data-toggle="tooltip" title="27 of 55">(27)</a></td>
+    <td>
+            <span style="color:green">OK</span>
+    </td>
+        <td>4 seconds</td>
+    </tr>
+    <tr>
+        <th scope="row">200.5.251.5</th>
+        <td>4153</td>
+        <td><span class="flag-icon flag-icon-ar"></span>  Argentina, Buenos Aires</td>
+        <td>
+                <div class="progress mb-2">
+                    <div class="progress-bar bg-danger" role="progressbar" style="width:19%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                    <span style="color:#42464b">813</span>
+                </div>
+        </td>
+        <td>
+SOCKS4        </td>
+        <td>Anonymous</td>
+        <td>100.0% <a data-toggle="tooltip" title="23 of 23">(23)</a></td>
+    <td>
+            <span style="color:green">OK</span>
+    </td>
+        <td>4 seconds</td>
+    </tr>
+    <tr>
+        <th scope="row">89.25.65.203</th>
+        <td>4153</td>
+        <td><span class="flag-icon flag-icon-bg"></span>  Bulgaria, Burgas</td>
+        <td>
+                <div class="progress mb-2">
+                    <div class="progress-bar bg-success" role="progressbar" style="width:95%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">53</div>
+                </div>
+        </td>
+        <td>
+SOCKS4        </td>
+        <td>Anonymous</td>
+        <td>48.1% <a data-toggle="tooltip" title="13 of 27">(13)</a></td>
+    <td>
+            <span style="color:green">OK</span>
+    </td>
+        <td>4 seconds</td>
+    </tr>
+    <tr>
+        <th scope="row">94.139.178.59</th>
+        <td>1085</td>
+        <td><span class="flag-icon flag-icon-ir"></span>  Iran, Tehran</td>
+        <td>
+                <div class="progress mb-2">
+                    <div class="progress-bar bg-danger" role="progressbar" style="width:42%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                    <span style="color:#42464b">586</span>
+                </div>
+        </td>
+        <td>
+SOCKS4        </td>
+        <td>Anonymous</td>
+        <td>52.8% <a data-toggle="tooltip" title="168 of 318">(168)</a></td>
+    <td>
+            <span style="color:green">OK</span>
+    </td>
+        <td>6 seconds</td>
+    </tr>
+    <tr>
+        <th scope="row">36.67.66.202</th>
+        <td>35955</td>
+        <td><span class="flag-icon flag-icon-id"></span>  Indonesia, Bengkulu</td>
+        <td>
+                <div class="progress mb-2">
+                    <div class="progress-bar bg-warning" role="progressbar" style="width:52%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">480</div>
+                </div>        </td>
+        <td>
+SOCKS4        </td>
+        <td>Anonymous</td>
+        <td>37.3% <a data-toggle="tooltip" title="126 of 338">(126)</a></td>
+    <td>
+            <span style="color:green">OK</span>
+    </td>
+        <td>6 seconds</td>
+    </tr>
+    <tr>
+        <th scope="row">195.239.178.110</th>
+        <td>39925</td>
+        <td><span class="flag-icon flag-icon-ru"></span>  Russia, Tyumen</td>
+        <td>
+                <div class="progress mb-2">
+                    <div class="progress-bar bg-warning" role="progressbar" style="width:84%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">166</div>
+                </div>        </td>
+        <td>
+SOCKS4        </td>
+        <td>Anonymous</td>
+        <td>100.0% <a data-toggle="tooltip" title="4 of 4">(4)</a></td>
+    <td>
+            <span style="color:green">OK</span>
+    </td>
+        <td>6 seconds</td>
+    </tr>
+    <tr>
+        <th scope="row">103.58.66.204</th>
+        <td>10801</td>
+        <td><span class="flag-icon flag-icon-in"></span>  India, Namakkal</td>
+        <td>
+                <div class="progress mb-2">
+                    <div class="progress-bar bg-warning" role="progressbar" style="width:62%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">384</div>
+                </div>        </td>
+        <td>
+SOCKS4        </td>
+        <td>Anonymous</td>
+        <td>37.7% <a data-toggle="tooltip" title="63 of 167">(63)</a></td>
+    <td>
+            <span style="color:green">OK</span>
+    </td>
+        <td>6 seconds</td>
+    </tr>
+    <tr>
+        <th scope="row">103.224.185.48</th>
+        <td>57400</td>
+        <td><span class="flag-icon flag-icon-in"></span>  India, Guwahati</td>
+        <td>
+                <div class="progress mb-2">
+                    <div class="progress-bar bg-warning" role="progressbar" style="width:74%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">260</div>
+                </div>        </td>
+        <td>
+SOCKS4        </td>
+        <td>Anonymous</td>
+        <td>39.1% <a data-toggle="tooltip" title="81 of 207">(81)</a></td>
+    <td>
+            <span style="color:green">OK</span>
+    </td>
+        <td>7 seconds</td>
+    </tr>
+    <tr>
+        <th scope="row">177.92.160.254</th>
+        <td>41363</td>
+        <td><span class="flag-icon flag-icon-br"></span>  Brazil, Parnamirim</td>
+        <td>
+                <div class="progress mb-2">
+                    <div class="progress-bar bg-warning" role="progressbar" style="width:81%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">191</div>
+                </div>        </td>
+        <td>
+SOCKS4        </td>
+        <td>Anonymous</td>
+        <td>31.2% <a data-toggle="tooltip" title="39 of 125">(39)</a></td>
+    <td>
+            <span style="color:green">OK</span>
+    </td>
+        <td>7 seconds</td>
+    </tr>
+    <tr>
+        <th scope="row">80.241.222.138</th>
+        <td>80</td>
+        <td><span class="flag-icon flag-icon-de"></span>  Germany, Munchen</td>
+        <td>
+                <div class="progress mb-2">
+                    <div class="progress-bar bg-danger" role="progressbar" style="width:6%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                    <span style="color:#42464b">945</span>
+                </div>
+        </td>
+        <td>
+HTTP        </td>
+        <td>Transparent</td>
+        <td>94.1% <a data-toggle="tooltip" title="2073 of 2204">(2073)</a></td>
+    <td>
+            <span style="color:green">OK</span>
+    </td>
+        <td>7 seconds</td>
+    </tr>
+    <tr>
+        <th scope="row">77.77.215.6</th>
+        <td>1080</td>
+        <td><span class="flag-icon flag-icon-ba"></span>  Bosnia and Herzegovina, Sarajevo</td>
+        <td>
+                <div class="progress mb-2">
+                    <div class="progress-bar bg-success" role="progressbar" style="width:97%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">34</div>
+                </div>
+        </td>
+        <td>
+SOCKS4        </td>
+        <td>Anonymous</td>
+        <td>33.3% <a data-toggle="tooltip" title="3 of 9">(3)</a></td>
+    <td>
+            <span style="color:green">OK</span>
+    </td>
+        <td>8 seconds</td>
+    </tr>
+    <tr>
+        <th scope="row">203.150.157.72</th>
+        <td>4145</td>
+        <td><span class="flag-icon flag-icon-th"></span>  Thailand, Bangkok</td>
+        <td>
+                <div class="progress mb-2">
+                    <div class="progress-bar bg-warning" role="progressbar" style="width:80%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">204</div>
+                </div>        </td>
+        <td>
+SOCKS4        </td>
+        <td>Anonymous</td>
+        <td>50.4% <a data-toggle="tooltip" title="140 of 278">(140)</a></td>
+    <td>
+            <span style="color:green">OK</span>
+    </td>
+        <td>9 seconds</td>
+    </tr>
+    <tr>
+        <th scope="row">91.150.77.57</th>
+        <td>56921</td>
+        <td><span class="flag-icon flag-icon-rs"></span>  Serbia, Belgrade</td>
+        <td>
+                <div class="progress mb-2">
+                    <div class="progress-bar bg-success" role="progressbar" style="width:95%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">57</div>
+                </div>
+        </td>
+        <td>
+SOCKS4        </td>
+        <td>Anonymous</td>
+        <td>50.0% <a data-toggle="tooltip" title="7 of 14">(7)</a></td>
+    <td>
+            <span style="color:green">OK</span>
+    </td>
+        <td>9 seconds</td>
+    </tr>
+    <tr>
+        <th scope="row">212.252.63.247</th>
+        <td>4153</td>
+        <td><span class="flag-icon flag-icon-tr"></span>  Turkey, Adapazari</td>
+        <td>
+                <div class="progress mb-2">
+                    <div class="progress-bar bg-success" role="progressbar" style="width:93%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">75</div>
+                </div>
+        </td>
+        <td>
+SOCKS4        </td>
+        <td>Anonymous</td>
+        <td>43.5% <a data-toggle="tooltip" title="156 of 359">(156)</a></td>
+    <td>
+            <span style="color:green">OK</span>
+    </td>
+        <td>9 seconds</td>
+    </tr>
+    <tr>
+        <th scope="row">103.74.120.89</th>
+        <td>4145</td>
+        <td><span class="flag-icon flag-icon-vn"></span>  Vietnam, Ho Chi Minh City</td>
+        <td>
+                <div class="progress mb-2">
+                    <div class="progress-bar bg-success" role="progressbar" style="width:97%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">32</div>
+                </div>
+        </td>
+        <td>
+SOCKS4        </td>
+        <td>Anonymous</td>
+        <td>33.3% <a data-toggle="tooltip" title="3 of 9">(3)</a></td>
+    <td>
+            <span style="color:green">OK</span>
+    </td>
+        <td>12 seconds</td>
+    </tr>
+    <tr>
+        <th scope="row">118.172.201.49</th>
+        <td>38142</td>
+        <td><span class="flag-icon flag-icon-th"></span>  Thailand, Chok Chai</td>
+        <td>
+                <div class="progress mb-2">
+                    <div class="progress-bar bg-warning" role="progressbar" style="width:70%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">305</div>
+                </div>        </td>
+        <td>
+SOCKS4        </td>
+        <td>Anonymous</td>
+        <td>48.1% <a data-toggle="tooltip" title="111 of 231">(111)</a></td>
+    <td>
+            <span style="color:green">OK</span>
+    </td>
+        <td>12 seconds</td>
+    </tr>
+    <tr>
+        <th scope="row">101.109.245.200</th>
+        <td>4153</td>
+        <td><span class="flag-icon flag-icon-th"></span>  Thailand, Wichit</td>
+        <td>
+                <div class="progress mb-2">
+                    <div class="progress-bar bg-danger" role="progressbar" style="width:15%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                    <span style="color:#42464b">853</span>
+                </div>
+        </td>
+        <td>
+SOCKS4        </td>
+        <td>Anonymous</td>
+        <td>43.5% <a data-toggle="tooltip" title="57 of 131">(57)</a></td>
+    <td>
+            <span style="color:green">OK</span>
+    </td>
+        <td>13 seconds</td>
+    </tr>
+    <tr>
+        <th scope="row">190.218.41.79</th>
+        <td>4153</td>
+        <td><span class="flag-icon flag-icon-pa"></span>  Panama, Panama City</td>
+        <td>
+                <div class="progress mb-2">
+                    <div class="progress-bar bg-warning" role="progressbar" style="width:82%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">182</div>
+                </div>        </td>
+        <td>
+SOCKS4        </td>
+        <td>Anonymous</td>
+        <td>100.0% <a data-toggle="tooltip" title="5 of 5">(5)</a></td>
+    <td>
+            <span style="color:green">OK</span>
+    </td>
+        <td>14 seconds</td>
+    </tr>
+    <tr>
+        <th scope="row">142.93.245.232</th>
+        <td>30588</td>
+        <td><span class="flag-icon flag-icon-us"></span>  United States, North Bergen</td>
+        <td>
+                <div class="progress mb-2">
+                    <div class="progress-bar bg-danger" role="progressbar" style="width:24%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                    <span style="color:#42464b">769</span>
+                </div>
+        </td>
+        <td>
+SOCKS4        </td>
+        <td>Anonymous</td>
+        <td>83.3% <a data-toggle="tooltip" title="5 of 6">(5)</a></td>
+    <td>
+            <span style="color:green">OK</span>
+    </td>
+        <td>14 seconds</td>
+    </tr>
+    <tr>
+        <th scope="row">50.197.210.138</th>
+        <td>32100</td>
+        <td><span class="flag-icon flag-icon-us"></span>  United States, Galveston</td>
+        <td>
+                <div class="progress mb-2">
+                    <div class="progress-bar bg-warning" role="progressbar" style="width:87%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">135</div>
+                </div>        </td>
+        <td>
+SOCKS4        </td>
+        <td>Anonymous</td>
+        <td>43.2% <a data-toggle="tooltip" title="188 of 435">(188)</a></td>
+    <td>
+            <span style="color:green">OK</span>
+    </td>
+        <td>16 seconds</td>
+    </tr>
+    <tr>
+        <th scope="row">187.72.239.185</th>
+        <td>4145</td>
+        <td><span class="flag-icon flag-icon-br"></span>  Brazil, Rio de Janeiro</td>
+        <td>
+                <div class="progress mb-2">
+                    <div class="progress-bar bg-warning" role="progressbar" style="width:78%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">227</div>
+                </div>        </td>
+        <td>
+SOCKS4        </td>
+        <td>Anonymous</td>
+        <td>40.0% <a data-toggle="tooltip" title="38 of 95">(38)</a></td>
+    <td>
+            <span style="color:green">OK</span>
+    </td>
+        <td>17 seconds</td>
+    </tr>
+    <tr>
+        <th scope="row">94.136.157.81</th>
+        <td>60030</td>
+        <td><span class="flag-icon flag-icon-sk"></span>  Slovakia, Secovce</td>
+        <td>
+                <div class="progress mb-2">
+                    <div class="progress-bar bg-success" role="progressbar" style="width:97%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">38</div>
+                </div>
+        </td>
+        <td>
+SOCKS4        </td>
+        <td>Anonymous</td>
+        <td>50.0% <a data-toggle="tooltip" title="8 of 16">(8)</a></td>
+    <td>
+            <span style="color:green">OK</span>
+    </td>
+        <td>19 seconds</td>
+    </tr>
+    <tr>
+        <th scope="row">91.92.78.207</th>
+        <td>4145</td>
+        <td><span class="flag-icon flag-icon-bg"></span>  Bulgaria, Plovdiv Province</td>
+        <td>
+                <div class="progress mb-2">
+                    <div class="progress-bar bg-success" role="progressbar" style="width:96%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">45</div>
+                </div>
+        </td>
+        <td>
+SOCKS4        </td>
+        <td>Anonymous</td>
+        <td>50.0% <a data-toggle="tooltip" title="2 of 4">(2)</a></td>
+    <td>
+            <span style="color:green">OK</span>
+    </td>
+        <td>20 seconds</td>
+    </tr>
+    <tr>
+        <th scope="row">160.2.59.45</th>
+        <td>64312</td>
+        <td><span class="flag-icon flag-icon-us"></span>  United States, Pocatello</td>
+        <td>
+                <div class="progress mb-2">
+                    <div class="progress-bar bg-warning" role="progressbar" style="width:78%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">223</div>
+                </div>        </td>
+        <td>
+SOCKS4        </td>
+        <td>Anonymous</td>
+        <td>46.4% <a data-toggle="tooltip" title="45 of 97">(45)</a></td>
+    <td>
+            <span style="color:green">OK</span>
+    </td>
+        <td>21 seconds</td>
+    </tr>
+    <tr>
+        <th scope="row">118.175.207.205</th>
+        <td>59830</td>
+        <td><span class="flag-icon flag-icon-th"></span>  Thailand, Ban Dung</td>
+        <td>
+                <div class="progress mb-2">
+                    <div class="progress-bar bg-danger" role="progressbar" style="width:23%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                    <span style="color:#42464b">773</span>
+                </div>
+        </td>
+        <td>
+SOCKS4        </td>
+        <td>Anonymous</td>
+        <td>39.9% <a data-toggle="tooltip" title="81 of 203">(81)</a></td>
+    <td>
+            <span style="color:green">OK</span>
+    </td>
+        <td>21 seconds</td>
+    </tr>
+    <tr>
+        <th scope="row">185.139.56.133</th>
+        <td>4145</td>
+        <td><span class="flag-icon flag-icon-ge"></span>  Georgia, Tbilisi</td>
+        <td>
+                <div class="progress mb-2">
+                    <div class="progress-bar bg-success" role="progressbar" style="width:92%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">88</div>
+                </div>
+        </td>
+        <td>
+SOCKS4        </td>
+        <td>Anonymous</td>
+        <td>49.1% <a data-toggle="tooltip" title="28 of 57">(28)</a></td>
+    <td>
+            <span style="color:green">OK</span>
+    </td>
+        <td>21 seconds</td>
+    </tr>
+    <tr>
+        <th scope="row">211.20.145.204</th>
+        <td>4153</td>
+        <td><span class="flag-icon flag-icon-tw"></span>  Taiwan, Taipei</td>
+        <td>
+                <div class="progress mb-2">
+                    <div class="progress-bar bg-warning" role="progressbar" style="width:56%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">442</div>
+                </div>        </td>
+        <td>
+SOCKS4        </td>
+        <td>Anonymous</td>
+        <td>37.5% <a data-toggle="tooltip" title="15 of 40">(15)</a></td>
+    <td>
+            <span style="color:green">OK</span>
+    </td>
+        <td>22 seconds</td>
+    </tr>
+    <tr>
+        <th scope="row">119.42.167.6</th>
+        <td>4145</td>
+        <td><span class="flag-icon flag-icon-kr"></span>  South Korea, Seoul</td>
+        <td>
+                <div class="progress mb-2">
+                    <div class="progress-bar bg-warning" role="progressbar" style="width:72%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">288</div>
+                </div>        </td>
+        <td>
+SOCKS4        </td>
+        <td>Anonymous</td>
+        <td>35.8% <a data-toggle="tooltip" title="78 of 218">(78)</a></td>
+    <td>
+            <span style="color:green">OK</span>
+    </td>
+        <td>22 seconds</td>
+    </tr>
+    <tr>
+        <th scope="row">190.152.12.54</th>
+        <td>47017</td>
+        <td><span class="flag-icon flag-icon-ec"></span>  Ecuador, Quito</td>
+        <td>
+                <div class="progress mb-2">
+                    <div class="progress-bar bg-warning" role="progressbar" style="width:83%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">178</div>
+                </div>        </td>
+        <td>
+SOCKS4        </td>
+        <td>Anonymous</td>
+        <td>45.3% <a data-toggle="tooltip" title="135 of 298">(135)</a></td>
+    <td>
+            <span style="color:green">OK</span>
+    </td>
+        <td>23 seconds</td>
+    </tr>
+    <tr>
+        <th scope="row">201.220.140.6</th>
+        <td>30575</td>
+        <td><span class="flag-icon flag-icon-hn"></span>  Honduras, San Pedro Sula</td>
+        <td>
+                <div class="progress mb-2">
+                    <div class="progress-bar bg-warning" role="progressbar" style="width:84%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">162</div>
+                </div>        </td>
+        <td>
+SOCKS4        </td>
+        <td>Anonymous</td>
+        <td>39.6% <a data-toggle="tooltip" title="214 of 540">(214)</a></td>
+    <td>
+            <span style="color:green">OK</span>
+    </td>
+        <td>25 seconds</td>
+    </tr>
+    <tr>
+        <th scope="row">46.34.161.9</th>
+        <td>4153</td>
+        <td><span class="flag-icon flag-icon-ir"></span>  Iran, Zanjan</td>
+        <td>
+                <div class="progress mb-2">
+                    <div class="progress-bar bg-warning" role="progressbar" style="width:90%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">108</div>
+                </div>        </td>
+        <td>
+SOCKS4        </td>
+        <td>Anonymous</td>
+        <td>55.5% <a data-toggle="tooltip" title="121 of 218">(121)</a></td>
+    <td>
+            <span style="color:green">OK</span>
+    </td>
+        <td>25 seconds</td>
+    </tr>
+    <tr>
+        <th scope="row">212.126.102.146</th>
+        <td>43854</td>
+        <td><span class="flag-icon flag-icon-iq"></span>  Iraq, Baghdad</td>
+        <td>
+                <div class="progress mb-2">
+                    <div class="progress-bar bg-success" role="progressbar" style="width:92%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">81</div>
+                </div>
+        </td>
+        <td>
+SOCKS4        </td>
+        <td>Anonymous</td>
+        <td>34.2% <a data-toggle="tooltip" title="38 of 111">(38)</a></td>
+    <td>
+            <span style="color:green">OK</span>
+    </td>
+        <td>26 seconds</td>
+    </tr>
+    <tr>
+        <th scope="row">190.90.20.229</th>
+        <td>50564</td>
+        <td><span class="flag-icon flag-icon-co"></span>  Colombia, Bogota</td>
+        <td>
+                <div class="progress mb-2">
+                    <div class="progress-bar bg-warning" role="progressbar" style="width:64%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">361</div>
+                </div>        </td>
+        <td>
+SOCKS4        </td>
+        <td>Anonymous</td>
+        <td>44.4% <a data-toggle="tooltip" title="48 of 108">(48)</a></td>
+    <td>
+            <span style="color:green">OK</span>
+    </td>
+        <td>26 seconds</td>
+    </tr>
+    <tr>
+        <th scope="row">92.187.228.47</th>
+        <td>4145</td>
+        <td><span class="flag-icon flag-icon-es"></span>  Spain, Jerez de la Frontera</td>
+        <td>
+                <div class="progress mb-2">
+                    <div class="progress-bar bg-success" role="progressbar" style="width:96%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">41</div>
+                </div>
+        </td>
+        <td>
+SOCKS4        </td>
+        <td>Anonymous</td>
+        <td>50.0% <a data-toggle="tooltip" title="44 of 88">(44)</a></td>
+    <td>
+            <span style="color:green">OK</span>
+    </td>
+        <td>28 seconds</td>
+    </tr>
+    <tr>
+        <th scope="row">186.224.238.32</th>
+        <td>48164</td>
+        <td><span class="flag-icon flag-icon-br"></span>  Brazil, Caldas Novas</td>
+        <td>
+                <div class="progress mb-2">
+                    <div class="progress-bar bg-danger" role="progressbar" style="width:29%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                    <span style="color:#42464b">718</span>
+                </div>
+        </td>
+        <td>
+SOCKS4        </td>
+        <td>Anonymous</td>
+        <td>43.3% <a data-toggle="tooltip" title="13 of 30">(13)</a></td>
+    <td>
+            <span style="color:green">OK</span>
+    </td>
+        <td>29 seconds</td>
+    </tr>
+    <tr>
+        <th scope="row">117.79.80.94</th>
+        <td>4145</td>
+        <td><span class="flag-icon flag-icon-cn"></span>  China, Hefei</td>
+        <td>
+                <div class="progress mb-2">
+                    <div class="progress-bar bg-danger" role="progressbar" style="width:39%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                    <span style="color:#42464b">617</span>
+                </div>
+        </td>
+        <td>
+SOCKS4        </td>
+        <td>Anonymous</td>
+        <td>33.3% <a data-toggle="tooltip" title="11 of 33">(11)</a></td>
+    <td>
+            <span style="color:green">OK</span>
+    </td>
+        <td>30 seconds</td>
+    </tr>
+    <tr>
+        <th scope="row">109.75.34.182</th>
+        <td>4153</td>
+        <td><span class="flag-icon flag-icon-am"></span>  Armenia, Yerevan</td>
+        <td>
+                <div class="progress mb-2">
+                    <div class="progress-bar bg-success" role="progressbar" style="width:93%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">72</div>
+                </div>
+        </td>
+        <td>
+SOCKS4        </td>
+        <td>Anonymous</td>
+        <td>61.9% <a data-toggle="tooltip" title="412 of 666">(412)</a></td>
+    <td>
+            <span style="color:green">OK</span>
+    </td>
+        <td>31 seconds</td>
+    </tr>
+    <tr>
+        <th scope="row">103.48.183.113</th>
+        <td>4145</td>
+        <td><span class="flag-icon flag-icon-in"></span>  India, Vellore</td>
+        <td>
+                <div class="progress mb-2">
+                    <div class="progress-bar bg-warning" role="progressbar" style="width:85%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">153</div>
+                </div>        </td>
+        <td>
+SOCKS4        </td>
+        <td>Anonymous</td>
+        <td>100.0% <a data-toggle="tooltip" title="5 of 5">(5)</a></td>
+    <td>
+            <span style="color:green">OK</span>
+    </td>
+        <td>32 seconds</td>
+    </tr>
+    <tr>
+        <th scope="row">187.86.201.4</th>
+        <td>31894</td>
+        <td><span class="flag-icon flag-icon-br"></span>  Brazil, Fortaleza</td>
+        <td>
+                <div class="progress mb-2">
+                    <div class="progress-bar bg-warning" role="progressbar" style="width:84%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">167</div>
+                </div>        </td>
+        <td>
+SOCKS4        </td>
+        <td>Anonymous</td>
+        <td>85.7% <a data-toggle="tooltip" title="6 of 7">(6)</a></td>
+    <td>
+            <span style="color:green">OK</span>
+    </td>
+        <td>33 seconds</td>
+    </tr>
+    <tr>
+        <th scope="row">31.40.1.60</th>
+        <td>4153</td>
+        <td><span class="flag-icon flag-icon-ir"></span>  Iran, Nazarabad</td>
+        <td>
+                <div class="progress mb-2">
+                    <div class="progress-bar bg-warning" role="progressbar" style="width:89%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">113</div>
+                </div>        </td>
+        <td>
+SOCKS4        </td>
+        <td>Anonymous</td>
+        <td>50.0% <a data-toggle="tooltip" title="43 of 86">(43)</a></td>
+    <td>
+            <span style="color:green">OK</span>
+    </td>
+        <td>34 seconds</td>
+    </tr>
+    <tr>
+        <th scope="row">202.75.97.82</th>
+        <td>38238</td>
+        <td><span class="flag-icon flag-icon-id"></span>  Indonesia, Jakarta</td>
+        <td>
+                <div class="progress mb-2">
+                    <div class="progress-bar bg-warning" role="progressbar" style="width:84%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">167</div>
+                </div>        </td>
+        <td>
+SOCKS4        </td>
+        <td>Anonymous</td>
+        <td>43.8% <a data-toggle="tooltip" title="28 of 64">(28)</a></td>
+    <td>
+            <span style="color:green">OK</span>
+    </td>
+        <td>35 seconds</td>
+    </tr>
+    <tr>
+        <th scope="row">125.167.32.158</th>
+        <td>4153</td>
+        <td><span class="flag-icon flag-icon-id"></span>  Indonesia, Surabaya</td>
+        <td>
+                <div class="progress mb-2">
+                    <div class="progress-bar bg-warning" role="progressbar" style="width:75%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">255</div>
+                </div>        </td>
+        <td>
+SOCKS4        </td>
+        <td>Anonymous</td>
+        <td>66.7% <a data-toggle="tooltip" title="6 of 9">(6)</a></td>
+    <td>
+            <span style="color:green">OK</span>
+    </td>
+        <td>36 seconds</td>
+    </tr>
+    <tr>
+        <th scope="row">217.145.199.112</th>
+        <td>56284</td>
+        <td><span class="flag-icon flag-icon-sk"></span>  Slovakia, Kolarovo</td>
+        <td>
+                <div class="progress mb-2">
+                    <div class="progress-bar bg-success" role="progressbar" style="width:95%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">55</div>
+                </div>
+        </td>
+        <td>
+SOCKS4        </td>
+        <td>Anonymous</td>
+        <td>48.8% <a data-toggle="tooltip" title="119 of 244">(119)</a></td>
+    <td>
+            <span style="color:green">OK</span>
+    </td>
+        <td>36 seconds</td>
+    </tr>
+    <tr>
+        <th scope="row">89.132.207.83</th>
+        <td>4145</td>
+        <td><span class="flag-icon flag-icon-hu"></span>  Hungary, Budapest</td>
+        <td>
+                <div class="progress mb-2">
+                    <div class="progress-bar bg-success" role="progressbar" style="width:98%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">29</div>
+                </div>
+        </td>
+        <td>
+SOCKS4        </td>
+        <td>Anonymous</td>
+        <td>57.1% <a data-toggle="tooltip" title="52 of 91">(52)</a></td>
+    <td>
+            <span style="color:green">OK</span>
+    </td>
+        <td>38 seconds</td>
+    </tr>
+    <tr>
+        <th scope="row">78.188.61.165</th>
+        <td>4145</td>
+        <td><span class="flag-icon flag-icon-tr"></span>  Turkey, Buyukcekmece</td>
+        <td>
+                <div class="progress mb-2">
+                    <div class="progress-bar bg-warning" role="progressbar" style="width:90%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">103</div>
+                </div>        </td>
+        <td>
+SOCKS4        </td>
+        <td>Anonymous</td>
+        <td>46.4% <a data-toggle="tooltip" title="246 of 530">(246)</a></td>
+    <td>
+            <span style="color:green">OK</span>
+    </td>
+        <td>38 seconds</td>
+    </tr>
+    <tr>
+        <th scope="row">176.227.188.16</th>
+        <td>4145</td>
+        <td><span class="flag-icon flag-icon-ru"></span>  Russia, Ryazan</td>
+        <td>
+                <div class="progress mb-2">
+                    <div class="progress-bar bg-success" role="progressbar" style="width:95%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">56</div>
+                </div>
+        </td>
+        <td>
+SOCKS4        </td>
+        <td>Anonymous</td>
+        <td>48.1% <a data-toggle="tooltip" title="253 of 526">(253)</a></td>
+    <td>
+            <span style="color:green">OK</span>
+    </td>
+        <td>39 seconds</td>
+    </tr>
+    <tr>
+        <th scope="row">46.188.82.11</th>
+        <td>54136</td>
+        <td><span class="flag-icon flag-icon-ru"></span>  Russia, Moscow</td>
+        <td>
+                <div class="progress mb-2">
+                    <div class="progress-bar bg-success" role="progressbar" style="width:95%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">58</div>
+                </div>
+        </td>
+        <td>
+SOCKS4        </td>
+        <td>Anonymous</td>
+        <td>46.1% <a data-toggle="tooltip" title="315 of 684">(315)</a></td>
+    <td>
+            <span style="color:green">OK</span>
+    </td>
+        <td>41 seconds</td>
+    </tr>
+    <tr>
+        <th scope="row">207.97.174.134</th>
+        <td>1080</td>
+        <td><span class="flag-icon flag-icon-us"></span>  United States, New York</td>
+        <td>
+                <div class="progress mb-2">
+                    <div class="progress-bar bg-success" role="progressbar" style="width:93%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">78</div>
+                </div>
+        </td>
+        <td>
+SOCKS4        </td>
+        <td>Anonymous</td>
+        <td>55.6% <a data-toggle="tooltip" title="5 of 9">(5)</a></td>
+    <td>
+            <span style="color:green">OK</span>
+    </td>
+        <td>43 seconds</td>
+    </tr>
+    <tr>
+        <th scope="row">93.126.25.33</th>
+        <td>1080</td>
+        <td><span class="flag-icon flag-icon-ir"></span>  Iran, Isfahan</td>
+        <td>
+                <div class="progress mb-2">
+                    <div class="progress-bar bg-success" role="progressbar" style="width:91%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">95</div>
+                </div>
+        </td>
+        <td>
+SOCKS4        </td>
+        <td>Anonymous</td>
+        <td>60.0% <a data-toggle="tooltip" title="3 of 5">(3)</a></td>
+    <td>
+            <span style="color:green">OK</span>
+    </td>
+        <td>43 seconds</td>
+    </tr>
+    <tr>
+        <th scope="row">145.253.118.157</th>
+        <td>37100</td>
+        <td><span class="flag-icon flag-icon-de"></span>  Germany, Bissingen</td>
+        <td>
+                <div class="progress mb-2">
+                    <div class="progress-bar bg-success" role="progressbar" style="width:99%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">13</div>
+                </div>
+        </td>
+        <td>
+SOCKS4        </td>
+        <td>Anonymous</td>
+        <td>41.7% <a data-toggle="tooltip" title="222 of 532">(222)</a></td>
+    <td>
+            <span style="color:green">OK</span>
+    </td>
+        <td>43 seconds</td>
+    </tr>
+    <tr>
+        <th scope="row">125.209.116.138</th>
+        <td>56096</td>
+        <td><span class="flag-icon flag-icon-pk"></span>  Pakistan, Karachi</td>
+        <td>
+                <div class="progress mb-2">
+                    <div class="progress-bar bg-danger" role="progressbar" style="width:6%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                    <span style="color:#42464b">948</span>
+                </div>
+        </td>
+        <td>
+SOCKS4        </td>
+        <td>Anonymous</td>
+        <td>40.2% <a data-toggle="tooltip" title="53 of 132">(53)</a></td>
+    <td>
+            <span style="color:green">OK</span>
+    </td>
+        <td>43 seconds</td>
+    </tr>
+    <tr>
+        <th scope="row">189.113.217.35</th>
+        <td>43603</td>
+        <td><span class="flag-icon flag-icon-br"></span>  Brazil, Ourinhos</td>
+        <td>
+                <div class="progress mb-2">
+                    <div class="progress-bar bg-danger" role="progressbar" style="width:30%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                    <span style="color:#42464b">702</span>
+                </div>
+        </td>
+        <td>
+SOCKS4        </td>
+        <td>Anonymous</td>
+        <td>40.9% <a data-toggle="tooltip" title="61 of 149">(61)</a></td>
+    <td>
+            <span style="color:green">OK</span>
+    </td>
+        <td>44 seconds</td>
+    </tr>
+    <tr>
+        <th scope="row">212.175.189.83</th>
+        <td>1080</td>
+        <td><span class="flag-icon flag-icon-tr"></span>  Turkey, Gaziantep</td>
+        <td>
+                <div class="progress mb-2">
+                    <div class="progress-bar bg-success" role="progressbar" style="width:93%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">75</div>
+                </div>
+        </td>
+        <td>
+SOCKS4        </td>
+        <td>Anonymous</td>
+        <td>56.9% <a data-toggle="tooltip" title="66 of 116">(66)</a></td>
+    <td>
+            <span style="color:green">OK</span>
+    </td>
+        <td>44 seconds</td>
+    </tr>
+    <tr>
+        <th scope="row">91.105.146.15</th>
+        <td>3629</td>
+        <td><span class="flag-icon flag-icon-ru"></span>  Russia, Pritomskiy</td>
+        <td>
+                <div class="progress mb-2">
+                    <div class="progress-bar bg-success" role="progressbar" style="width:92%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">83</div>
+                </div>
+        </td>
+        <td>
+SOCKS4        </td>
+        <td>Anonymous</td>
+        <td>44.4% <a data-toggle="tooltip" title="157 of 354">(157)</a></td>
+    <td>
+            <span style="color:green">OK</span>
+    </td>
+        <td>44 seconds</td>
+    </tr>
+    <tr>
+        <th scope="row">185.142.95.250</th>
+        <td>1080</td>
+        <td><span class="flag-icon flag-icon-ir"></span>  Iran, Tehran</td>
+        <td>
+                <div class="progress mb-2">
+                    <div class="progress-bar bg-danger" role="progressbar" style="width:25%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                    <span style="color:#42464b">752</span>
+                </div>
+        </td>
+        <td>
+SOCKS4        </td>
+        <td>Anonymous</td>
+        <td>39.0% <a data-toggle="tooltip" title="46 of 118">(46)</a></td>
+    <td>
+            <span style="color:green">OK</span>
+    </td>
+        <td>44 seconds</td>
+    </tr>
+    <tr>
+        <th scope="row">168.205.218.232</th>
+        <td>4145</td>
+        <td><span class="flag-icon flag-icon-br"></span>  Brazil, Campos Gerais</td>
+        <td>
+                <div class="progress mb-2">
+                    <div class="progress-bar bg-warning" role="progressbar" style="width:64%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">367</div>
+                </div>        </td>
+        <td>
+SOCKS4        </td>
+        <td>Anonymous</td>
+        <td>62.1% <a data-toggle="tooltip" title="54 of 87">(54)</a></td>
+    <td>
+            <span style="color:green">OK</span>
+    </td>
+        <td>45 seconds</td>
+    </tr>
+    <tr>
+        <th scope="row">124.41.211.188</th>
+        <td>49181</td>
+        <td><span class="flag-icon flag-icon-np"></span>  Nepal, Kathmandu</td>
+        <td>
+                <div class="progress mb-2">
+                    <div class="progress-bar bg-warning" role="progressbar" style="width:82%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">181</div>
+                </div>        </td>
+        <td>
+SOCKS4        </td>
+        <td>Anonymous</td>
+        <td>41.5% <a data-toggle="tooltip" title="22 of 53">(22)</a></td>
+    <td>
+            <span style="color:green">OK</span>
+    </td>
+        <td>45 seconds</td>
+    </tr>
+    <tr>
+        <th scope="row">103.10.59.73</th>
+        <td>4145</td>
+        <td><span class="flag-icon flag-icon-id"></span>  Indonesia, Tangerang</td>
+        <td>
+                <div class="progress mb-2">
+                    <div class="progress-bar bg-warning" role="progressbar" style="width:75%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">259</div>
+                </div>        </td>
+        <td>
+SOCKS4        </td>
+        <td>Anonymous</td>
+        <td>41.2% <a data-toggle="tooltip" title="112 of 272">(112)</a></td>
+    <td>
+            <span style="color:green">OK</span>
+    </td>
+        <td>45 seconds</td>
+    </tr>
+    <tr>
+        <th scope="row">109.201.96.222</th>
+        <td>4145</td>
+        <td><span class="flag-icon flag-icon-ru"></span>  Russia, Kovrov</td>
+        <td>
+                <div class="progress mb-2">
+                    <div class="progress-bar bg-success" role="progressbar" style="width:96%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">46</div>
+                </div>
+        </td>
+        <td>
+SOCKS4        </td>
+        <td>Anonymous</td>
+        <td>46.2% <a data-toggle="tooltip" title="482 of 1044">(482)</a></td>
+    <td>
+            <span style="color:green">OK</span>
+    </td>
+        <td>47 seconds</td>
+    </tr>
+    <tr>
+        <th scope="row">41.211.125.122</th>
+        <td>40265</td>
+        <td><span class="flag-icon flag-icon-cm"></span>  Cameroon, Yaounde</td>
+        <td>
+                <div class="progress mb-2">
+                    <div class="progress-bar bg-danger" role="progressbar" style="width:17%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                    <span style="color:#42464b">835</span>
+                </div>
+        </td>
+        <td>
+SOCKS4        </td>
+        <td>Anonymous</td>
+        <td>75.8% <a data-toggle="tooltip" title="25 of 33">(25)</a></td>
+    <td>
+            <span style="color:green">OK</span>
+    </td>
+        <td>47 seconds</td>
+    </tr>
+    <tr>
+        <th scope="row">210.245.51.51</th>
+        <td>4145</td>
+        <td><span class="flag-icon flag-icon-vn"></span>  Vietnam, Ho Chi Minh City</td>
+        <td>
+                <div class="progress mb-2">
+                    <div class="progress-bar bg-warning" role="progressbar" style="width:81%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">198</div>
+                </div>        </td>
+        <td>
+SOCKS4        </td>
+        <td>Anonymous</td>
+        <td>42.7% <a data-toggle="tooltip" title="82 of 192">(82)</a></td>
+    <td>
+            <span style="color:green">OK</span>
+    </td>
+        <td>50 seconds</td>
+    </tr>
+    <tr>
+        <th scope="row">87.254.138.170</th>
+        <td>4145</td>
+        <td><span class="flag-icon flag-icon-ru"></span>  Russia, Tyumen</td>
+        <td>
+                <div class="progress mb-2">
+                    <div class="progress-bar bg-success" role="progressbar" style="width:93%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">79</div>
+                </div>
+        </td>
+        <td>
+SOCKS4        </td>
+        <td>Anonymous</td>
+        <td>46.7% <a data-toggle="tooltip" title="49 of 105">(49)</a></td>
+    <td>
+            <span style="color:green">OK</span>
+    </td>
+        <td>50 seconds</td>
+    </tr>
+    <tr>
+        <th scope="row">125.26.99.228</th>
+        <td>44052</td>
+        <td><span class="flag-icon flag-icon-th"></span>  Thailand, Khok Kruat</td>
+        <td>
+                <div class="progress mb-2">
+                    <div class="progress-bar bg-warning" role="progressbar" style="width:71%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">297</div>
+                </div>        </td>
+        <td>
+SOCKS4        </td>
+        <td>Anonymous</td>
+        <td>40.9% <a data-toggle="tooltip" title="147 of 359">(147)</a></td>
+    <td>
+            <span style="color:green">OK</span>
+    </td>
+        <td>50 seconds</td>
+    </tr>
+    <tr>
+        <th scope="row">103.25.45.38</th>
+        <td>4153</td>
+        <td><span class="flag-icon flag-icon-in"></span>  India, Chennai</td>
+        <td>
+                <div class="progress mb-2">
+                    <div class="progress-bar bg-danger" role="progressbar" style="width:42%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                    <span style="color:#42464b">589</span>
+                </div>
+        </td>
+        <td>
+SOCKS4        </td>
+        <td>Anonymous</td>
+        <td>42.0% <a data-toggle="tooltip" title="391 of 932">(391)</a></td>
+    <td>
+            <span style="color:green">OK</span>
+    </td>
+        <td>51 seconds</td>
+    </tr>
+    <tr>
+        <th scope="row">185.208.100.49</th>
+        <td>1080</td>
+        <td><span class="flag-icon flag-icon-tr"></span>  Turkey, Kilis</td>
+        <td>
+                <div class="progress mb-2">
+                    <div class="progress-bar bg-success" role="progressbar" style="width:93%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">76</div>
+                </div>
+        </td>
+        <td>
+SOCKS4        </td>
+        <td>Anonymous</td>
+        <td>49.0% <a data-toggle="tooltip" title="179 of 365">(179)</a></td>
+    <td>
+            <span style="color:green">OK</span>
+    </td>
+        <td>54 seconds</td>
+    </tr>
+    <tr>
+        <th scope="row">103.131.104.63</th>
+        <td>4145</td>
+        <td><span class="flag-icon flag-icon-id"></span>  Indonesia, Yogyakarta</td>
+        <td>
+                <div class="progress mb-2">
+                    <div class="progress-bar bg-warning" role="progressbar" style="width:74%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">262</div>
+                </div>        </td>
+        <td>
+SOCKS4        </td>
+        <td>Anonymous</td>
+        <td>48.0% <a data-toggle="tooltip" title="133 of 277">(133)</a></td>
+    <td>
+            <span style="color:green">OK</span>
+    </td>
+        <td>55 seconds</td>
+    </tr>
+    <tr>
+        <th scope="row">168.181.134.119</th>
+        <td>35148</td>
+        <td><span class="flag-icon flag-icon-br"></span>  Brazil, Cacu</td>
+        <td>
+                <div class="progress mb-2">
+                    <div class="progress-bar bg-danger" role="progressbar" style="width:45%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                    <span style="color:#42464b">552</span>
+                </div>
+        </td>
+        <td>
+SOCKS4        </td>
+        <td>Anonymous</td>
+        <td>35.8% <a data-toggle="tooltip" title="19 of 53">(19)</a></td>
+    <td>
+            <span style="color:green">OK</span>
+    </td>
+        <td>55 seconds</td>
+    </tr>
+    <tr>
+        <th scope="row">36.91.36.155</th>
+        <td>57004</td>
+        <td><span class="flag-icon flag-icon-id"></span>  Indonesia, Bandar Lampung</td>
+        <td>
+                <div class="progress mb-2">
+                    <div class="progress-bar bg-danger" role="progressbar" style="width:17%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                    <span style="color:#42464b">830</span>
+                </div>
+        </td>
+        <td>
+SOCKS4        </td>
+        <td>Anonymous</td>
+        <td>38.5% <a data-toggle="tooltip" title="85 of 221">(85)</a></td>
+    <td>
+            <span style="color:green">OK</span>
+    </td>
+        <td>56 seconds</td>
+    </tr>
+    <tr>
+        <th scope="row">77.81.247.174</th>
+        <td>4145</td>
+        <td><span class="flag-icon flag-icon-ae"></span>  United Arab Emirates, Dubai</td>
+        <td>
+                <div class="progress mb-2">
+                    <div class="progress-bar bg-danger" role="progressbar" style="width:15%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                    <span style="color:#42464b">855</span>
+                </div>
+        </td>
+        <td>
+SOCKS4        </td>
+        <td>Anonymous</td>
+        <td>50.0% <a data-toggle="tooltip" title="92 of 184">(92)</a></td>
+    <td>
+            <span style="color:green">OK</span>
+    </td>
+        <td>57 seconds</td>
+    </tr>
+    <tr>
+        <th scope="row">159.224.37.181</th>
+        <td>31429</td>
+        <td><span class="flag-icon flag-icon-ua"></span>  Ukraine, Kharkiv</td>
+        <td>
+                <div class="progress mb-2">
+                    <div class="progress-bar bg-success" role="progressbar" style="width:96%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">47</div>
+                </div>
+        </td>
+        <td>
+SOCKS4        </td>
+        <td>Anonymous</td>
+        <td>55.0% <a data-toggle="tooltip" title="133 of 242">(133)</a></td>
+    <td>
+            <span style="color:green">OK</span>
+    </td>
+        <td>57 seconds</td>
+    </tr>
+    <tr>
+        <th scope="row">109.187.225.212</th>
+        <td>1080</td>
+        <td><span class="flag-icon flag-icon-ru"></span>  Russia, Ufa</td>
+        <td>
+                <div class="progress mb-2">
+                    <div class="progress-bar bg-success" role="progressbar" style="width:94%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">65</div>
+                </div>
+        </td>
+        <td>
+SOCKS5<span>,</span>SOCKS4        </td>
+        <td>Anonymous</td>
+        <td>New <a data-toggle="tooltip" title="1 of 2">(1)</a></td>
+    <td>
+            <span style="color:green">OK</span>
+    </td>
+        <td>57 seconds</td>
+    </tr>
+    <tr>
+        <th scope="row">190.216.254.98</th>
+        <td>1080</td>
+        <td><span class="flag-icon flag-icon-ve"></span>  Venezuela, Caracas</td>
+        <td>
+                <div class="progress mb-2">
+                    <div class="progress-bar bg-warning" role="progressbar" style="width:76%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">242</div>
+                </div>        </td>
+        <td>
+SOCKS4        </td>
+        <td>Anonymous</td>
+        <td>40.2% <a data-toggle="tooltip" title="37 of 92">(37)</a></td>
+    <td>
+            <span style="color:green">OK</span>
+    </td>
+        <td>58 seconds</td>
+    </tr>
+    <tr>
+        <th scope="row">77.37.240.23</th>
+        <td>4145</td>
+        <td><span class="flag-icon flag-icon-ru"></span>  Russia, Moscow</td>
+        <td>
+                <div class="progress mb-2">
+                    <div class="progress-bar bg-success" role="progressbar" style="width:95%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">50</div>
+                </div>
+        </td>
+        <td>
+SOCKS4        </td>
+        <td>Anonymous</td>
+        <td>48.0% <a data-toggle="tooltip" title="96 of 200">(96)</a></td>
+    <td>
+            <span style="color:green">OK</span>
+    </td>
+        <td>59 seconds</td>
+    </tr>
+    <tr>
+        <th scope="row">123.108.201.133</th>
+        <td>35614</td>
+        <td><span class="flag-icon flag-icon-in"></span>  India, Vijayawada</td>
+        <td>
+                <div class="progress mb-2">
+                    <div class="progress-bar bg-warning" role="progressbar" style="width:84%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">165</div>
+                </div>        </td>
+        <td>
+SOCKS4        </td>
+        <td>Anonymous</td>
+        <td>43.5% <a data-toggle="tooltip" title="133 of 306">(133)</a></td>
+    <td>
+            <span style="color:green">OK</span>
+    </td>
+        <td>1 minutes</td>
+    </tr>
+    <tr>
+        <th scope="row">177.133.86.242</th>
+        <td>4145</td>
+        <td><span class="flag-icon flag-icon-br"></span>  Brazil, Brasilia</td>
+        <td>
+                <div class="progress mb-2">
+                    <div class="progress-bar bg-warning" role="progressbar" style="width:75%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">257</div>
+                </div>        </td>
+        <td>
+SOCKS4        </td>
+        <td>Anonymous</td>
+        <td>65.2% <a data-toggle="tooltip" title="30 of 46">(30)</a></td>
+    <td>
+            <span style="color:green">OK</span>
+    </td>
+        <td>1 minutes</td>
+    </tr>
+    <tr>
+        <th scope="row">81.162.56.18</th>
+        <td>11337</td>
+        <td><span class="flag-icon flag-icon-ua"></span>  Ukraine, Kerch</td>
+        <td>
+                <div class="progress mb-2">
+                    <div class="progress-bar bg-success" role="progressbar" style="width:91%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">94</div>
+                </div>
+        </td>
+        <td>
+SOCKS4        </td>
+        <td>Anonymous</td>
+        <td>70.0% <a data-toggle="tooltip" title="21 of 30">(21)</a></td>
+    <td>
+            <span style="color:green">OK</span>
+    </td>
+        <td>1 minutes</td>
+    </tr>
+    <tr>
+        <th scope="row">59.36.136.238</th>
+        <td>1080</td>
+        <td><span class="flag-icon flag-icon-cn"></span>  China, Shenzhen</td>
+        <td>
+                <div class="progress mb-2">
+                    <div class="progress-bar bg-warning" role="progressbar" style="width:82%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">184</div>
+                </div>        </td>
+        <td>
+SOCKS4        </td>
+        <td>Anonymous</td>
+        <td>46.5% <a data-toggle="tooltip" title="47 of 101">(47)</a></td>
+    <td>
+            <span style="color:green">OK</span>
+    </td>
+        <td>1 minutes</td>
+    </tr>
+    <tr>
+        <th scope="row">181.196.181.146</th>
+        <td>4145</td>
+        <td><span class="flag-icon flag-icon-ec"></span>  Ecuador, Quevedo</td>
+        <td>
+                <div class="progress mb-2">
+                    <div class="progress-bar bg-warning" role="progressbar" style="width:81%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">190</div>
+                </div>        </td>
+        <td>
+SOCKS4        </td>
+        <td>Anonymous</td>
+        <td>45.6% <a data-toggle="tooltip" title="109 of 239">(109)</a></td>
+    <td>
+            <span style="color:green">OK</span>
+    </td>
+        <td>1 minutes</td>
+    </tr>
+    <tr>
+        <th scope="row">160.202.145.206</th>
+        <td>80</td>
+        <td><span class="flag-icon flag-icon-bd"></span>  Bangladesh, Dhaka</td>
+        <td>
+                <div class="progress mb-2">
+                    <div class="progress-bar bg-danger" role="progressbar" style="width:19%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                    <span style="color:#42464b">811</span>
+                </div>
+        </td>
+        <td>
+HTTP        </td>
+        <td>Transparent</td>
+        <td>59.1% <a data-toggle="tooltip" title="285 of 482">(285)</a></td>
+    <td>
+            <span style="color:green">OK</span>
+    </td>
+        <td>1 minutes</td>
+    </tr>
+    <tr>
+        <th scope="row">213.138.77.238</th>
+        <td>4145</td>
+        <td><span class="flag-icon flag-icon-ru"></span>  Russia, Rostov-on-Don</td>
+        <td>
+                <div class="progress mb-2">
+                    <div class="progress-bar bg-warning" role="progressbar" style="width:60%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">403</div>
+                </div>        </td>
+        <td>
+SOCKS4        </td>
+        <td>Anonymous</td>
+        <td>47.8% <a data-toggle="tooltip" title="478 of 1001">(478)</a></td>
+    <td>
+            <span style="color:green">OK</span>
+    </td>
+        <td>1 minutes</td>
+    </tr>
+    <tr>
+        <th scope="row">186.192.253.71</th>
+        <td>4145</td>
+        <td><span class="flag-icon flag-icon-br"></span>  Brazil, Gurupi</td>
+        <td>
+                <div class="progress mb-2">
+                    <div class="progress-bar bg-warning" role="progressbar" style="width:82%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">180</div>
+                </div>        </td>
+        <td>
+SOCKS4        </td>
+        <td>Anonymous</td>
+        <td>39.5% <a data-toggle="tooltip" title="45 of 114">(45)</a></td>
+    <td>
+            <span style="color:green">OK</span>
+    </td>
+        <td>1 minutes</td>
+    </tr>
+    <tr>
+        <th scope="row">182.253.105.44</th>
+        <td>4145</td>
+        <td><span class="flag-icon flag-icon-id"></span>  Indonesia, Cirebon</td>
+        <td>
+                <div class="progress mb-2">
+                    <div class="progress-bar bg-warning" role="progressbar" style="width:83%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">170</div>
+                </div>        </td>
+        <td>
+SOCKS4        </td>
+        <td>Anonymous</td>
+        <td>88.9% <a data-toggle="tooltip" title="8 of 9">(8)</a></td>
+    <td>
+            <span style="color:green">OK</span>
+    </td>
+        <td>1 minutes</td>
+    </tr>
+    <tr>
+        <th scope="row">188.138.254.218</th>
+        <td>4145</td>
+        <td><span class="flag-icon flag-icon-md"></span>  Moldova, Chisinau</td>
+        <td>
+                <div class="progress mb-2">
+                    <div class="progress-bar bg-success" role="progressbar" style="width:95%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">50</div>
+                </div>
+        </td>
+        <td>
+SOCKS4        </td>
+        <td>Anonymous</td>
+        <td>47.6% <a data-toggle="tooltip" title="527 of 1106">(527)</a></td>
+    <td>
+            <span style="color:green">OK</span>
+    </td>
+        <td>1 minutes</td>
+    </tr>
+    <tr>
+        <th scope="row">116.90.229.186</th>
+        <td>47694</td>
+        <td><span class="flag-icon flag-icon-np"></span>  Nepal, Kathmandu</td>
+        <td>
+                <div class="progress mb-2">
+                    <div class="progress-bar bg-warning" role="progressbar" style="width:83%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">172</div>
+                </div>        </td>
+        <td>
+SOCKS4        </td>
+        <td>Anonymous</td>
+        <td>42.7% <a data-toggle="tooltip" title="41 of 96">(41)</a></td>
+    <td>
+            <span style="color:green">OK</span>
+    </td>
+        <td>1 minutes</td>
+    </tr>
+    <tr>
+        <th scope="row">192.254.69.43</th>
+        <td>9300</td>
+        <td><span class="flag-icon flag-icon-us"></span>  United States, Lenoir</td>
+        <td>
+                <div class="progress mb-2">
+                    <div class="progress-bar bg-success" role="progressbar" style="width:91%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">98</div>
+                </div>
+        </td>
+        <td>
+SOCKS5        </td>
+        <td>Anonymous</td>
+        <td>50.0% <a data-toggle="tooltip" title="3 of 6">(3)</a></td>
+    <td>
+            <span style="color:green">OK</span>
+    </td>
+        <td>1 minutes</td>
+    </tr>
+    <tr>
+        <th scope="row">36.89.182.3</th>
+        <td>31800</td>
+        <td><span class="flag-icon flag-icon-id"></span>  Indonesia, Jayapura</td>
+        <td>
+                <div class="progress mb-2">
+                    <div class="progress-bar bg-danger" role="progressbar" style="width:47%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                    <span style="color:#42464b">538</span>
+                </div>
+        </td>
+        <td>
+SOCKS4        </td>
+        <td>Anonymous</td>
+        <td>45.4% <a data-toggle="tooltip" title="74 of 163">(74)</a></td>
+    <td>
+            <span style="color:green">OK</span>
+    </td>
+        <td>1 minutes</td>
+    </tr>
+    <tr>
+        <th scope="row">201.55.103.34</th>
+        <td>4145</td>
+        <td><span class="flag-icon flag-icon-br"></span>  Brazil, Nova Iguacu</td>
+        <td>
+                <div class="progress mb-2">
+                    <div class="progress-bar bg-warning" role="progressbar" style="width:77%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">233</div>
+                </div>        </td>
+        <td>
+SOCKS4        </td>
+        <td>Anonymous</td>
+        <td>52.4% <a data-toggle="tooltip" title="299 of 571">(299)</a></td>
+    <td>
+            <span style="color:green">OK</span>
+    </td>
+        <td>1 minutes</td>
+    </tr>
+    <tr>
+        <th scope="row">58.48.168.166</th>
+        <td>43372</td>
+        <td><span class="flag-icon flag-icon-cn"></span>  China, Wuhan</td>
+        <td>
+                <div class="progress mb-2">
+                    <div class="progress-bar bg-warning" role="progressbar" style="width:69%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">319</div>
+                </div>        </td>
+        <td>
+SOCKS4        </td>
+        <td>Anonymous</td>
+        <td>37.8% <a data-toggle="tooltip" title="91 of 241">(91)</a></td>
+    <td>
+            <span style="color:green">OK</span>
+    </td>
+        <td>1 minutes</td>
+    </tr>
+    <tr>
+        <th scope="row">177.53.9.41</th>
+        <td>10801</td>
+        <td><span class="flag-icon flag-icon-br"></span>  Brazil, Ibaiti</td>
+        <td>
+                <div class="progress mb-2">
+                    <div class="progress-bar bg-warning" role="progressbar" style="width:62%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">387</div>
+                </div>        </td>
+        <td>
+SOCKS4        </td>
+        <td>Anonymous</td>
+        <td>81.8% <a data-toggle="tooltip" title="9 of 11">(9)</a></td>
+    <td>
+            <span style="color:green">OK</span>
+    </td>
+        <td>1 minutes</td>
+    </tr>
+    <tr>
+        <th scope="row">103.250.166.17</th>
+        <td>6667</td>
+        <td><span class="flag-icon flag-icon-in"></span>  India, Valsad</td>
+        <td>
+                <div class="progress mb-2">
+                    <div class="progress-bar bg-warning" role="progressbar" style="width:85%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">159</div>
+                </div>        </td>
+        <td>
+SOCKS4        </td>
+        <td>Anonymous</td>
+        <td>33.3% <a data-toggle="tooltip" title="3 of 9">(3)</a></td>
+    <td>
+            <span style="color:green">OK</span>
+    </td>
+        <td>1 minutes</td>
+    </tr>
+    <tr>
+        <th scope="row">104.248.63.18</th>
+        <td>30588</td>
+        <td><span class="flag-icon flag-icon-us"></span>  United States, North Bergen</td>
+        <td>
+                <div class="progress mb-2">
+                    <div class="progress-bar bg-danger" role="progressbar" style="width:33%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                    <span style="color:#42464b">673</span>
+                </div>
+        </td>
+        <td>
+SOCKS4        </td>
+        <td>Anonymous</td>
+        <td>50.0% <a data-toggle="tooltip" title="2 of 4">(2)</a></td>
+    <td>
+            <span style="color:green">OK</span>
+    </td>
+        <td>1 minutes</td>
+    </tr>
+    <tr>
+        <th scope="row">197.255.162.162</th>
+        <td>59619</td>
+        <td><span class="flag-icon flag-icon-ng"></span>  Nigeria, Lagos</td>
+        <td>
+                <div class="progress mb-2">
+                    <div class="progress-bar bg-warning" role="progressbar" style="width:69%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">316</div>
+                </div>        </td>
+        <td>
+SOCKS4        </td>
+        <td>Anonymous</td>
+        <td>38.3% <a data-toggle="tooltip" title="75 of 196">(75)</a></td>
+    <td>
+            <span style="color:green">OK</span>
+    </td>
+        <td>1 minutes</td>
+    </tr>
+    <tr>
+        <th scope="row">217.20.183.149</th>
+        <td>4145</td>
+        <td><span class="flag-icon flag-icon-ua"></span>  Ukraine, Odesa</td>
+        <td>
+                <div class="progress mb-2">
+                    <div class="progress-bar bg-success" role="progressbar" style="width:97%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">38</div>
+                </div>
+        </td>
+        <td>
+SOCKS4        </td>
+        <td>Anonymous</td>
+        <td>44.1% <a data-toggle="tooltip" title="79 of 179">(79)</a></td>
+    <td>
+            <span style="color:green">OK</span>
+    </td>
+        <td>1 minutes</td>
+    </tr>
+    <tr>
+        <th scope="row">124.41.213.201</th>
+        <td>54806</td>
+        <td><span class="flag-icon flag-icon-np"></span>  Nepal, Kathmandu</td>
+        <td>
+                <div class="progress mb-2">
+                    <div class="progress-bar bg-warning" role="progressbar" style="width:80%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">207</div>
+                </div>        </td>
+        <td>
+SOCKS4        </td>
+        <td>Anonymous</td>
+        <td>36.7% <a data-toggle="tooltip" title="88 of 240">(88)</a></td>
+    <td>
+            <span style="color:green">OK</span>
+    </td>
+        <td>1 minutes</td>
+    </tr>
+    <tr>
+        <th scope="row">190.61.47.226</th>
+        <td>4153</td>
+        <td><span class="flag-icon flag-icon-co"></span>  Colombia, Bogota</td>
+        <td>
+                <div class="progress mb-2">
+                    <div class="progress-bar bg-warning" role="progressbar" style="width:84%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">166</div>
+                </div>        </td>
+        <td>
+SOCKS4        </td>
+        <td>Anonymous</td>
+        <td>43.5% <a data-toggle="tooltip" title="111 of 255">(111)</a></td>
+    <td>
+            <span style="color:green">OK</span>
+    </td>
+        <td>1 minutes</td>
+    </tr>
+    <tr>
+        <th scope="row">187.237.164.212</th>
+        <td>31758</td>
+        <td><span class="flag-icon flag-icon-mx"></span>  Mexico, La Paz</td>
+        <td>
+                <div class="progress mb-2">
+                    <div class="progress-bar bg-warning" role="progressbar" style="width:70%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">303</div>
+                </div>        </td>
+        <td>
+SOCKS4        </td>
+        <td>Anonymous</td>
+        <td>45.5% <a data-toggle="tooltip" title="5 of 11">(5)</a></td>
+    <td>
+            <span style="color:green">OK</span>
+    </td>
+        <td>1 minutes</td>
+    </tr>
+    <tr>
+        <th scope="row">192.111.137.34</th>
+        <td>4145</td>
+        <td><span class="flag-icon flag-icon-us"></span>  United States, Los Angeles</td>
+        <td>
+                <div class="progress mb-2">
+                    <div class="progress-bar bg-warning" role="progressbar" style="width:80%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">201</div>
+                </div>        </td>
+        <td>
+SOCKS4        </td>
+        <td>Anonymous</td>
+        <td>35.7% <a data-toggle="tooltip" title="5 of 14">(5)</a></td>
+    <td>
+            <span style="color:green">OK</span>
+    </td>
+        <td>1 minutes</td>
+    </tr>
+    <tr>
+        <th scope="row">191.242.232.10</th>
+        <td>45256</td>
+        <td><span class="flag-icon flag-icon-br"></span>  Brazil, Nova Iguacu</td>
+        <td>
+                <div class="progress mb-2">
+                    <div class="progress-bar bg-warning" role="progressbar" style="width:78%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">225</div>
+                </div>        </td>
+        <td>
+SOCKS4        </td>
+        <td>Anonymous</td>
+        <td>33.3% <a data-toggle="tooltip" title="2 of 6">(2)</a></td>
+    <td>
+            <span style="color:green">OK</span>
+    </td>
+        <td>1 minutes</td>
+    </tr>
+    <tr>
+        <th scope="row">193.34.55.64</th>
+        <td>32087</td>
+        <td><span class="flag-icon flag-icon-pl"></span>  Poland, Sosnowiec</td>
+        <td>
+                <div class="progress mb-2">
+                    <div class="progress-bar bg-success" role="progressbar" style="width:97%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">33</div>
+                </div>
+        </td>
+        <td>
+SOCKS4        </td>
+        <td>Anonymous</td>
+        <td>41.9% <a data-toggle="tooltip" title="213 of 508">(213)</a></td>
+    <td>
+            <span style="color:green">OK</span>
+    </td>
+        <td>1 minutes</td>
+    </tr>
+
+                                </tbody>
+
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- end page title -->
+
+
+    </div> <!-- container-fluid -->
+    <script>
+        $(function () {
+            $('#select-country').selectize({
+                plugins: ['remove_button'], render: {
+                    item: function (item, escape) {
+                        return "<div><span class='flag-icon flag-icon-" + escape(item.value.toLowerCase().replace("ı", "i")) + "'></span>&nbsp;" + escape(item.text) + "</div>";
+                    },
+                    option: function (item, escape) {
+                        return "<div><span class='flag-icon flag-icon-" + escape(item.value.toLowerCase().replace("ı", "i")) + "'></span>&nbsp;" + escape(item.text) + "</div>";
+                    }
+                }
+            });
+        });
+    </script>
+    <script>
+        (function ($) {
+            $.fn.inputFilter = function (inputFilter) {
+                return this.on("input keydown keyup mousedown mouseup select contextmenu drop", function () {
+                    if (inputFilter(this.value)) {
+                        this.oldValue = this.value;
+                        this.oldSelectionStart = this.selectionStart;
+                        this.oldSelectionEnd = this.selectionEnd;
+                    } else if (this.hasOwnProperty("oldValue")) {
+                        this.value = this.oldValue;
+                        this.setSelectionRange(this.oldSelectionStart, this.oldSelectionEnd);
+                    } else {
+                        this.value = "";
+                    }
+                });
+            };
+        }(jQuery));
+        $("#pingText").inputFilter(function (value) {
+            return /^\d*$/.test(value) && (value === "" || parseInt(value) <= 99999);
+        });
+    </script>
+    <script>
+        $(function () {
+            $('#select-ports').selectize({
+                delimiter: ',',
+                persist: false,
+                create: function (input) {
+                    return {
+                        value: input,
+                        text: input
+                    }
+                }
+            });
+        });
+    </script>
+    <script>
+        var page = 1;
+        var serialize = "&status=1";
+        $("#submitButton").click(function (e) {
+            e.preventDefault(); // avoid to execute the actual submit of the form.
+            $(this).html('<span class="spinner-border spinner-border-sm mr-1" role="status" aria-hidden="true"></span> Search');
+            sortResult(false, true, false);
+        });
+        function sortResult(ping, time, uptime) {
+            var form = $("#filterForm");
+            var url = form.attr('action');
+            serialize = form.serialize();
+            if (ping) {
+                $("#sortPing").html('Ping <div role="status" class="spinner-border text-secondary ml-1" style="width: 1rem;height: 1rem;"><span class="sr-only" style="margin-left: 13px;">Loading...</span></div>');
+            }
+            if (time) {
+                $("#sortTime").html('Last Check <div role="status" class="spinner-border text-secondary ml-1" style="width: 1rem;height: 1rem;"><span class="sr-only" style="margin-left: 13px;">Loading...</span></div>');
+            }
+            if (uptime) {
+                $("#sortUptime").html('Uptime <div role="status" class="spinner-border text-secondary ml-1" style="width: 1rem;height: 1rem;"><span class="sr-only" style="margin-left: 13px;">Loading...</span></div>');
+            }
+            serialize = serialize + "&sortPing=" + ping + "&sortTime=" + time + "&sortUptime=" + uptime;
+            page = 1;
+            $.ajax({
+                type: "POST",
+                url: url,
+                data: serialize,
+                success: function (data) {
+                    response = data;
+                    $('#loadPage').html("");
+                    $('#loadPage').append(data);
+                    $("#submitButton").text('Search');
+                    $("#sortPing").html("Ping ⇡");
+                    $("#sortTime").html("Last Check ⇡");
+                    $("#sortUptime").html("Uptime ⇡");
+                    if (ping) {
+                        $("#sortPing").css('color', 'blue');
+                        $("#sortTime").css('color', '#495057');
+                        $("#sortUptime").css('color', '#495057');
+                    }
+                    else if (time) {
+                        $("#sortTime").css('color', 'blue');
+                        $("#sortUptime").css('color', '#495057');
+                        $("#sortPing").css('color', '#495057');
+                    }
+                    else if (uptime) {
+                        $("#sortUptime").css('color', 'blue');
+                        $("#sortPing").css('color', '#495057');
+                        $("#sortTime").css('color', '#495057');
+                    }
+                }
+            });
+        }
+        $(window).scroll(function () {
+            if ($(window).scrollTop() >= $(document).height() - $(window).innerHeight() - 100) {
+                $.ajax({
+                    type: 'GET',
+                    url: '/home/filterresult?limit=' + 100 + '&page=' + page + '&' + serialize,
+                    cache: false,
+                    success: function (data) {
+                        page = page + 1;
+                        $('#loadPage').append(data);
+                    },
+                    error: function (data) {
+                    },
+                    async: false
+                });
+            }
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            $('#status').prop('checked', true);
+        });
+        $('#status').change(function () {
+            if (this.checked) {
+                $('#statusSpan').text("OK").css("color", "green");
+            }
+            else {
+                $('#statusSpan').text("ALL").css("color", "black");
+            }
+        });
+    </script>
+</body>
+
+
+            <footer class="footer">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="text-center text-lg-left">
+                                2020 © ProxyScan.
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="text-right d-none d-lg-block">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <script data-ad-client="ca-pub-6377565397678080" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- END layout-wrapper -->
+    <!-- jQuery  -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/waves.js"></script>
+    <script src="js/simplebar.min.js"></script>
+    <script src="js/selectize.min.js"></script>
+    <!-- App js -->
+    <script src="js/theme.js"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-153864223-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-153864223-1');
+    </script>
+
+
+</body>
+</html>

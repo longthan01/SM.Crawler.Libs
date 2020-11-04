@@ -16,4 +16,10 @@
     <ProjectReference Include="..\SM.Crawler.Libs\SM.Crawler.Libs.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="test.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>
