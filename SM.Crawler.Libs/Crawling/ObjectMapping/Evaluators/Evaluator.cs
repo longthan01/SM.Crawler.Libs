@@ -28,6 +28,7 @@ namespace SM.Crawler.Libs.Crawling.ObjectMapping.Evaluators
                 {
                     Container = document.DocumentNode.SelectSingleNode(evaluationContext.XpathRoot)
                 });
+                value = evaluationContext.PostMapCallback == null ? value : evaluationContext.PostMapCallback(value);
                 ObjectUtils.SetValue(target, ctx.Key, value);
             }
         }

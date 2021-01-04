@@ -13,6 +13,7 @@ namespace SM.Crawler.Libs.Crawling.ObjectMapping.Evaluators
         IMapper MapObject(string propertyName, IMapper evaluator);
         IMapper MapObject(string propertyName, string xpath, IMapper evaluator);
         IMapper MapArray(string propertyName, string xpath);
+        IMapper MapArrayBySingleLine(string propertyName, string xpath, string delimiter);
         IMapper MapArray(string propertyName, string xpath, IMapper evaluator);
         Dictionary<string, Func<IMapper, EvaluationContext>> GetMappingExpressions();
     }

@@ -28,6 +28,7 @@ namespace SM.Crawler.Tests
         public IEnumerable<Proxy> Proxies { get; set; }
     }
 
+    [TestFixture]
     public class EvaluatorTests
     {
         [SetUp]

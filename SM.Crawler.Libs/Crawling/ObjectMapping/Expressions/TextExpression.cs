@@ -11,12 +11,7 @@ namespace SM.Libs.Crawling.ObjectMapping
         public override object Map(MappingContext context)
         {
             var nodes = context.Container.SelectSingleNode(Expression);
-            if (nodes == null)
-            {
-                return null;
-            }
-
-            return nodes.InnerText;
+            return nodes?.InnerText;
         }
     }
 

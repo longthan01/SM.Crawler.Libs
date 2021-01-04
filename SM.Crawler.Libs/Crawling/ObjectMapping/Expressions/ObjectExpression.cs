@@ -6,7 +6,7 @@ using System.Collections.Generic;
 
 namespace SM.Crawler.Libs.Crawling.ObjectMapping.Expressions
 {
-    public class ObjectExpression : ExpressionBase, IMappingExpression
+    public class ObjectExpression : ExpressionBase
     {
         private readonly Dictionary<string, IMappingExpression> _propertyExpressions;
         private readonly Type _targetType;
@@ -16,10 +16,10 @@ namespace SM.Crawler.Libs.Crawling.ObjectMapping.Expressions
             _targetType = targetType;
             _propertyExpressions = propertyExpressions;
         }
-        public override object Map(MappingContext Context)
+        public override object Map(MappingContext context)
         {
             object result = Activator.CreateInstance(_targetType);
-            var rootNode = Context.Container.SelectSingleNode(Expression);
+            var rootNode = context.Container.SelectSingleNode(Expression);
             foreach (var exp in _propertyExpressions)
             {
                 var propertyName = exp.Key;

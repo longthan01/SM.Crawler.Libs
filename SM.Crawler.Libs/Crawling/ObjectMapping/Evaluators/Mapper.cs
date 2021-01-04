@@ -101,6 +101,29 @@ namespace SM.Crawler.Libs.Crawling.ObjectMapping.Evaluators
 
         public IMapper MapArray(string propertyName, string xpath)
         {
+            return this.MapArray(propertyName, xpath, postmapCallback: null);
+        }
+
+        public IMapper MapArrayBySingleLine(string propertyName, string xpath, string delimiter)
+        {
+            return this.MapArray(propertyName, xpath, postmapCallback: obj =>
+            {
+                // obj should be an array
+                Array arr = obj as Array;
+                string element = arr.GetValue(0) as string;
+                string[] tokens = element.Split(delimiter);
+                List<string> result = new List<string>();
+                foreach (var s in tokens)
+                {
+                    result.Add(s);
+                }
+
+                return result.ToArray();
+            });
+        }
+
+        private IMapper MapArray(string propertyName, string xpath, Func<object, object> postmapCallback)
+        {
             mappingExpressions.Add(propertyName, (ev) =>
             {
                 var expression = new ArrayExpression(typeof(string), new TextExpression())
@@ -110,7 +133,9 @@ namespace SM.Crawler.Libs.Crawling.ObjectMapping.Evaluators
                 return new EvaluationContext()
                 {
                     MappingExpression = expression,
-                    XpathRoot = this.XpathRoot
+                    XpathRoot = this.XpathRoot,
+                    PostMapCallback = postmapCallback
+
                 };
             });
             return this;

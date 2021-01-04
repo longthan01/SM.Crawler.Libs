@@ -10,5 +10,6 @@ namespace SM.Crawler.Libs.Crawling.ObjectMapping.Evaluators
     {
         public IMappingExpression MappingExpression { get; set; }
         public string XpathRoot { get; set; }
+        public Func<object, object> PostMapCallback { get; set; }
     }
 }
