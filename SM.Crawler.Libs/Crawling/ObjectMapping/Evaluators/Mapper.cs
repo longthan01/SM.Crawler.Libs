@@ -16,7 +16,7 @@ namespace SM.Crawler.Libs.Crawling.ObjectMapping.Evaluators
         public string XpathRoot { get; }
         private Type TargetType { get; }
 
-        public Mapper(Type targetType) : this(targetType, null)
+        public Mapper(Type targetType) : this(targetType, "/")
         {
         }
         public Mapper(Type targetType, string xpathRoot)
@@ -43,18 +43,24 @@ namespace SM.Crawler.Libs.Crawling.ObjectMapping.Evaluators
 
         public IMapper MapHtml(string propertyName, string xpath)
         {
+            return this.MapHtml(propertyName, xpath, null);
+        }
+
+        public IMapper MapHtml(string propertyName, string xpath, Func<object, object> postmapCallback)
+        {
             mappingExpressions.Add(propertyName, (ev) =>
+            {
+                var expression = new TextHtmlExpression()
                 {
-                    var expression = new TextHtmlExpression()
-                    {
-                        Expression = xpath,
-                    };
-                    return new EvaluationContext()
-                    {
-                        MappingExpression = expression,
-                        XpathRoot = this.XpathRoot
-                    };
-                });
+                    Expression = xpath,
+                };
+                return new EvaluationContext()
+                {
+                    MappingExpression = expression,
+                    XpathRoot = this.XpathRoot,
+                    PostMapCallback = postmapCallback
+                };
+            });
             return this;
         }
 
@@ -106,22 +112,28 @@ namespace SM.Crawler.Libs.Crawling.ObjectMapping.Evaluators
 
         public IMapper MapArrayBySingleLine(string propertyName, string xpath, string delimiter)
         {
-            return this.MapArray(propertyName, xpath, postmapCallback: obj =>
+            return this.MapArrayBySingleLine(propertyName, xpath, manipulationCallback: obj =>
             {
-                // obj should be an array
-                Array arr = obj as Array;
-                string element = arr.GetValue(0) as string;
+                string element = obj as string;
                 string[] tokens = element.Split(delimiter);
                 List<string> result = new List<string>();
                 foreach (var s in tokens)
                 {
                     result.Add(s);
                 }
-
                 return result.ToArray();
             });
         }
-
+        public IMapper MapArrayBySingleLine(string propertyName, string xpath, Func<object, Array> manipulationCallback)
+        {
+            return this.MapArray(propertyName, xpath, postmapCallback: obj =>
+            {
+                // obj should be an array
+                Array arr = obj as Array;
+                string element = arr.GetValue(0) as string;
+                return manipulationCallback(element);
+            });
+        }
         private IMapper MapArray(string propertyName, string xpath, Func<object, object> postmapCallback)
         {
             mappingExpressions.Add(propertyName, (ev) =>
@@ -147,7 +159,9 @@ namespace SM.Crawler.Libs.Crawling.ObjectMapping.Evaluators
             {
                 var ex = new ObjectExpression(
                     mapper.GetTargetType(),
-                    mapper.GetMappingExpressions().ToDictionary(x => x.Key, x => x.Value(mapper).MappingExpression));
+                    mapper.GetMappingExpressions()
+                        .ToDictionary(x => x.Key, x => x.Value(mapper).MappingExpression));
+
                 ArrayExpression expression = new ArrayExpression(mapper.GetTargetType(), ex)
                 {
                     Expression = xpath
