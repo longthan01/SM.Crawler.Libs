@@ -17,6 +17,6 @@ namespace SM.Crawler.Libs.Crawling.ObjectMapping.Evaluators
         IMapper MapArray(string propertyName, string xpath, IMapper evaluator);
         IMapper MapArrayBySingleLine(string propertyName, string xpath, string delimiter);
         IMapper MapArrayBySingleLine(string propertyName, string xpath, Func<object, Array> manipulationCallback);
-        Dictionary<string, Func<IMapper, EvaluationContext>> GetMappingExpressions();
+        IEnumerable<EvaluationContext> GetEvaluationContext();
     }
 }

@@ -21,5 +21,4 @@ namespace SM.Crawler.Libs.Crawling.ObjectMapping.Base
 
         public abstract object Map(MappingContext context);
     }
-
 }

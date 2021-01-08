@@ -78,7 +78,7 @@ namespace SM.Crawler.Tests
             Assert.AreEqual("10708", result.Prize3.ElementAt(1));
 
             Assert.AreEqual("89067", result.Prize2);
-            
+
             Assert.AreEqual("42246", result.Prize1);
 
             Assert.AreEqual("760688", result.Prize0);

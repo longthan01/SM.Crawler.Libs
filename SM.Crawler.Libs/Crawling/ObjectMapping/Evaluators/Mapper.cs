@@ -11,7 +11,7 @@ namespace SM.Crawler.Libs.Crawling.ObjectMapping.Evaluators
 {
     public class Mapper : IMapper
     {
-        private Dictionary<string, Func<IMapper, EvaluationContext>> mappingExpressions = new Dictionary<string, Func<IMapper, EvaluationContext>>();
+        private List<EvaluationContext> mappingExpressions = new List<EvaluationContext>();
 
         public string XpathRoot { get; }
         private Type TargetType { get; }
@@ -26,17 +26,14 @@ namespace SM.Crawler.Libs.Crawling.ObjectMapping.Evaluators
         }
         public IMapper Map(string propertyName, string xpath)
         {
-            mappingExpressions.Add(propertyName, (ev) =>
+            mappingExpressions.Add(new EvaluationContext
             {
-                var expression = new TextExpression()
+                PropertyName = propertyName,
+                MappingExpression = new TextExpression
                 {
                     Expression = xpath
-                };
-                return new EvaluationContext()
-                {
-                    MappingExpression = expression,
-                    XpathRoot = this.XpathRoot
-                };
+                },
+                XpathRoot = this.XpathRoot
             });
             return this;
         }
@@ -48,36 +45,29 @@ namespace SM.Crawler.Libs.Crawling.ObjectMapping.Evaluators
 
         public IMapper MapHtml(string propertyName, string xpath, Func<object, object> postmapCallback)
         {
-            mappingExpressions.Add(propertyName, (ev) =>
+            mappingExpressions.Add(new EvaluationContext()
             {
-                var expression = new TextHtmlExpression()
+                PropertyName = propertyName,
+                MappingExpression = new TextHtmlExpression
                 {
-                    Expression = xpath,
-                };
-                return new EvaluationContext()
-                {
-                    MappingExpression = expression,
-                    XpathRoot = this.XpathRoot,
-                    PostMapCallback = postmapCallback
-                };
+                    Expression = xpath
+                },
+                XpathRoot = this.XpathRoot,
+                PostMapCallback = postmapCallback
             });
             return this;
         }
 
         public IMapper Map(string propertyName, string xpath, string attribute)
         {
-            mappingExpressions.Add(propertyName, (ev) =>
+            mappingExpressions.Add(new EvaluationContext
             {
-                var expression = new AttributeExpression()
+                MappingExpression = new AttributeExpression()
                 {
                     Expression = xpath,
                     AttributeName = attribute
-                };
-                return new EvaluationContext()
-                {
-                    MappingExpression = expression,
-                    XpathRoot = this.XpathRoot
-                };
+                },
+                XpathRoot = this.XpathRoot
             });
             return this;
         }
@@ -89,18 +79,13 @@ namespace SM.Crawler.Libs.Crawling.ObjectMapping.Evaluators
 
         public IMapper MapObject(string propertyName, string xpathRoot, IMapper mapper)
         {
-            mappingExpressions.Add(propertyName, (ev) =>
+            mappingExpressions.Add(new EvaluationContext
             {
-                var expression = new ObjectExpression(mapper.GetTargetType(),
-                    mapper.GetMappingExpressions().ToDictionary(x => x.Key, x => x.Value(mapper).MappingExpression))
+                MappingExpression = new ObjectExpression(mapper)
                 {
                     Expression = xpathRoot
-                };
-                return new EvaluationContext()
-                {
-                    MappingExpression = expression,
-                    XpathRoot = this.XpathRoot
-                };
+                },
+                XpathRoot = this.XpathRoot
             });
             return this;
         }
@@ -136,41 +121,30 @@ namespace SM.Crawler.Libs.Crawling.ObjectMapping.Evaluators
         }
         private IMapper MapArray(string propertyName, string xpath, Func<object, object> postmapCallback)
         {
-            mappingExpressions.Add(propertyName, (ev) =>
+            mappingExpressions.Add(new EvaluationContext()
             {
-                var expression = new ArrayExpression(typeof(string), new TextExpression())
+                PropertyName = propertyName,
+                MappingExpression = new ArrayExpression(typeof(string), new TextExpression())
                 {
                     Expression = xpath
-                };
-                return new EvaluationContext()
-                {
-                    MappingExpression = expression,
-                    XpathRoot = this.XpathRoot,
-                    PostMapCallback = postmapCallback
+                },
+                XpathRoot = this.XpathRoot,
+                PostMapCallback = postmapCallback
 
-                };
             });
             return this;
         }
 
         public IMapper MapArray(string propertyName, string xpath, IMapper mapper)
         {
-            mappingExpressions.Add(propertyName, (ev) =>
+            mappingExpressions.Add(new EvaluationContext()
             {
-                var ex = new ObjectExpression(
-                    mapper.GetTargetType(),
-                    mapper.GetMappingExpressions()
-                        .ToDictionary(x => x.Key, x => x.Value(mapper).MappingExpression));
-
-                ArrayExpression expression = new ArrayExpression(mapper.GetTargetType(), ex)
+                MappingExpression = new ArrayExpression(mapper.GetTargetType(), new ObjectExpression(mapper))
                 {
                     Expression = xpath
-                };
-                return new EvaluationContext()
-                {
-                    MappingExpression = expression,
-                    XpathRoot = this.XpathRoot
-                };
+                },
+                XpathRoot = this.XpathRoot,
+                PropertyName = propertyName
             });
             return this;
         }
@@ -180,7 +154,7 @@ namespace SM.Crawler.Libs.Crawling.ObjectMapping.Evaluators
             return this.TargetType;
         }
 
-        public Dictionary<string, Func<IMapper, EvaluationContext>> GetMappingExpressions()
+        public IEnumerable<EvaluationContext> GetEvaluationContext()
         {
             return this.mappingExpressions;
         }

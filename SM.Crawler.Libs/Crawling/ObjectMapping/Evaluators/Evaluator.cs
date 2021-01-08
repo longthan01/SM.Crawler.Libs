@@ -1,4 +1,5 @@
-﻿using SM.Crawler.Libs.Crawling.ObjectMapping.Base;
+﻿using HtmlAgilityPack;
+using SM.Crawler.Libs.Crawling.ObjectMapping.Base;
 using SM.Libs.Crawling.ObjectMapping;
 using SM.Libs.Utils;
 using System;
@@ -20,17 +21,25 @@ namespace SM.Crawler.Libs.Crawling.ObjectMapping.Evaluators
         {
             HtmlAgilityPack.HtmlDocument document = new HtmlAgilityPack.HtmlDocument();
             document.LoadHtml(html);
-            foreach (var ctx in mapper.GetMappingExpressions())
+            EvaluateTo(target, document.DocumentNode, mapper);
+        }
+        public static void EvaluateTo(object target, HtmlNode root, IMapper mapper)
+        {
+            foreach (var ctx in mapper.GetEvaluationContext())
             {
-                Func<IMapper, EvaluationContext> mappingDelegate = ctx.Value;
-                EvaluationContext evaluationContext = mappingDelegate(mapper);
-                object value = evaluationContext.MappingExpression.Map(new MappingContext()
+                object value = ctx.MappingExpression.Map(new MappingContext()
                 {
-                    Container = document.DocumentNode.SelectSingleNode(evaluationContext.XpathRoot)
+                    Container = root.SelectSingleNode(ctx.XpathRoot)
                 });
-                value = evaluationContext.PostMapCallback == null ? value : evaluationContext.PostMapCallback(value);
-                ObjectUtils.SetValue(target, ctx.Key, value);
+                value = ctx.PostMapCallback == null ? value : ctx.PostMapCallback(value);
+                ObjectUtils.SetValue(target, ctx.PropertyName, value);
             }
+        }
+        public static object Evaluate(HtmlNode root, IMapper mapper)
+        {
+            object result = Activator.CreateInstance(mapper.GetTargetType());
+            EvaluateTo(result, root, mapper);
+            return result;
         }
     }
 }
