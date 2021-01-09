@@ -67,7 +67,8 @@ namespace SM.Crawler.Tests
             mapper
                 .Map("Host", "./th[1]")
                 .Map("Port", "./td[1]")
-                .MapObject("Metadata", "//*[@id=\"loadPage\"]/tr[100]", new Mapper(typeof(Metadata))
+                .MapObject("Metadata", "//*[@id=\"loadPage\"]/tr[100]", 
+                    new Mapper(typeof(Metadata))
                     .Map("Country", "./td[2]")
                     .Map("Ping", "./td[3]/div[1]/div[1]")
                     .Map("Type", "./td[4]")
@@ -96,7 +97,7 @@ namespace SM.Crawler.Tests
                     .Map("Type", "./td[4]")
                     .Map("Anonymity", "./td[5]")
                  );
-            IMapper arrayProxyMapper = new Mapper(typeof(ArrayProxy), ".")
+            IMapper arrayProxyMapper = new Mapper(typeof(ArrayProxy))
                 .MapArray("Proxies", "//*[@id=\"loadPage\"]/tr", proxyMapper);
 
             ArrayProxy arrayProxy = Evaluator.Evaluate(html, arrayProxyMapper) as ArrayProxy;
@@ -105,8 +106,8 @@ namespace SM.Crawler.Tests
             Assert.AreEqual(100, arrayProxy.Proxies.Count());
             Proxy proxy = arrayProxy.Proxies.ElementAt(0);
             Assert.IsNotNull(proxy);
-            Assert.AreEqual(proxy.Host, "31.206.38.40");
-            Assert.AreEqual(proxy.Port, "37630");
+            Assert.AreEqual("31.206.38.40", proxy.Host);
+            Assert.AreEqual("37630", proxy.Port);
             Assert.AreEqual(proxy.Metadata.Country.Trim(), "Turkey, Diyarbakir");
             Assert.AreEqual(proxy.Metadata.Ping, "89");
             Assert.AreEqual(proxy.Metadata.Type.Replace("\r", "").Replace("\n", "").Trim(), "SOCKS4");

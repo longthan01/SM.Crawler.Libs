@@ -87,8 +87,8 @@ namespace SM.Crawler.Tests
         [Test]
         public void EvaluateListOfComplexType_ShouldSuccess()
         {
-            string html = DefaultHttpUtility.GetHtmlStringAsync("https://xskt.com.vn/xshcm-xstp").Result;
-            IMapper elementmapper = new Mapper(typeof(LoteryResult));
+            string html = File.ReadAllText("xsktcomvn_list.html");
+            IMapper elementmapper = new Mapper(typeof(LoteryResult), ".");
             elementmapper
                 .Map("Prize8", "./tr[2]/td[2]/em[1]")
                 .Map("Prize7", "./tr[3]/td[2]/p[1]")
@@ -115,6 +115,23 @@ namespace SM.Crawler.Tests
             LoteryResultList result = Evaluator.Evaluate(html, mapper) as LoteryResultList;
             Assert.IsNotNull(result);
             Assert.AreEqual(4, result.LoteryResults.Count());
+            EvaluateListOfComplexType_ShouldSuccess_AssertFirstElement(result);
+        }
+        private void EvaluateListOfComplexType_ShouldSuccess_AssertFirstElement(LoteryResultList loteryResultList)
+        {
+            var firstEl = loteryResultList.LoteryResults.First();
+            Assert.AreEqual("61", firstEl.Prize8);
+            Assert.AreEqual("242", firstEl.Prize7);
+            Assert.AreEqual("8986", firstEl.Prize6.First());
+            Assert.AreEqual("9330", firstEl.Prize6.ElementAt(1));
+            Assert.AreEqual("4614", firstEl.Prize6.Last());
+            Assert.AreEqual("1310", firstEl.Prize5);
+            Assert.AreEqual("75318", firstEl.Prize4.ElementAt(3));
+            Assert.AreEqual("07145", firstEl.Prize4.Last());
+            Assert.AreEqual("32906", firstEl.Prize3.Last());
+            Assert.AreEqual("97786", firstEl.Prize2);
+            Assert.AreEqual("30428", firstEl.Prize1);
+            Assert.AreEqual("693324", firstEl.Prize0);
         }
     }
 }

@@ -16,7 +16,7 @@ namespace SM.Crawler.Libs.Crawling.ObjectMapping.Evaluators
         public string XpathRoot { get; }
         private Type TargetType { get; }
 
-        public Mapper(Type targetType) : this(targetType, "/")
+        public Mapper(Type targetType) : this(targetType, ".")
         {
         }
         public Mapper(Type targetType, string xpathRoot)
@@ -85,6 +85,7 @@ namespace SM.Crawler.Libs.Crawling.ObjectMapping.Evaluators
                 {
                     Expression = xpathRoot
                 },
+                PropertyName = propertyName,
                 XpathRoot = this.XpathRoot
             });
             return this;
@@ -139,10 +140,13 @@ namespace SM.Crawler.Libs.Crawling.ObjectMapping.Evaluators
         {
             mappingExpressions.Add(new EvaluationContext()
             {
-                MappingExpression = new ArrayExpression(mapper.GetTargetType(), new ObjectExpression(mapper))
-                {
-                    Expression = xpath
-                },
+                MappingExpression = new ArrayExpression(mapper.GetTargetType(), 
+                    new ObjectExpression(mapper))
+                    {
+                        // array's element selector
+                        Expression = xpath
+                    },
+                // root node where we will use to select the array's element
                 XpathRoot = this.XpathRoot,
                 PropertyName = propertyName
             });
