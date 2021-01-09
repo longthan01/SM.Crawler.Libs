@@ -16,7 +16,7 @@ namespace SM.Crawler.Libs.Crawling.ObjectMapping.Evaluators
         public string XpathRoot { get; }
         private Type TargetType { get; }
 
-        public Mapper(Type targetType) : this(targetType, "/")
+        public Mapper(Type targetType) : this(targetType, ".")
         {
         }
         public Mapper(Type targetType, string xpathRoot)
@@ -85,6 +85,7 @@ namespace SM.Crawler.Libs.Crawling.ObjectMapping.Evaluators
                 {
                     Expression = xpathRoot
                 },
+                PropertyName = propertyName,
                 XpathRoot = this.XpathRoot
             });
             return this;
